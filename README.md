@@ -2,7 +2,18 @@
 | S. No.    | Week|Action Item|Status| 
 |---------------|--------|-------|-----------------------|
 |1|0|install Oracle virtual box with Ubuntu 20.04|✅|
-||||
+|2||Install magic and SKY130 PDKs|✅|
+|||✅|
+|||✅|
+|||✅|
+|||✅|
+|||✅|
+|||✅|
+|||✅|
+|||✅|
+|||✅|
+|||✅|
+|||✅|
 
 ### Install Oracle Virtual Box
 
