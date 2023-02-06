@@ -140,11 +140,16 @@ $ schematic2layout.py -h
 ## VSD Custom Layout
 ### CMOS Fabrication Process
 #### 16 Mask Process
-- Selecting a substrate
+- **Selecting a substrate**
 
 ![image](https://user-images.githubusercontent.com/104830557/217040798-1edcf7ab-4772-4e3a-98ec-e859655e7679.png)
 
-- Creating active region for transistors
+- **Creating active region for transistors**
+![image](https://user-images.githubusercontent.com/104830557/217042471-e4c84cea-92c5-4341-9543-105622e191f4.png)
+
+![image](https://user-images.githubusercontent.com/104830557/217043083-d4834741-415c-4ef2-bd8b-817909305fde.png)
+
+
 - 
 - 
 ### Introduction to Corner Stitching and Tech Files
