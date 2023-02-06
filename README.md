@@ -12,6 +12,7 @@
 |9.||6|Create the design shown in section 7 of the course and perform pre-layout using xschem or ngspice|✅|
 |10.||6|Post layout characterization using 2) and 3)|✅|
 |11.||6|Update your findings on your GitHub repo with the title “Week 0”|✅|
+|12.||7|Status Update Call|✅|
 
 
 ### Install Oracle Virtual Box
