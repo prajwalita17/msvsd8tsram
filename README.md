@@ -27,8 +27,10 @@
 The following dependencies must be met by your system:
 
 gcc >= 6.1.0 (For C++14 support)
-python >= 3.7 (For PEP 560 support) You may optionally install Boost & lp_solve using your distro package manager (apt, yum etc) to save some compilation time.
+python >= 3.7 (For PEP 560 support) 
+You may optionally install Boost & lp_solve using your distro package manager (apt, yum etc) to save some compilation time.
 Note: In case you have multiple gcc versions installed on your system, we recommend explicitly setting the compiler paths as follows:
+
 ```
 $ export CC=/path/to/your/gcc
 $ export CXX=/path/to/your/g++
