@@ -15,7 +15,7 @@
 |12.||7|Status Update Call|✅|
 
 
-### Install Oracle Virtual Box
+### Install Oracle Virtual Box with Ubuntu 22.04
 
 1. Create a new directory **Opensourcetoolinstall** in D: Drive. Make sure there is atleast 150 GB disk space in the drive.
 2. Go to [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
@@ -23,6 +23,9 @@
 4. Install the VirtualBox.
 5. Download **Ubuntu 22.04.1 LTS** from [https://ubuntu.com/download/desktop](https://ubuntu.com/download/desktop) and save the .exe file in **Opensourcetoolinstall** folder.
 
+## Install Magic and SKY130 PDKs
+
+## Install ALIGN Tool
 
 ### Step 0: Check prerequisites
 The following dependencies must be met by your system:
@@ -133,3 +136,18 @@ For a full list of options supported by the tool, please use the following comma
 ```
 $ schematic2layout.py -h
 ```
+
+## VSD Custom Layout
+### CMOS Fabrication Process
+#### 16 Mask Process
+- Selecting a substrate
+
+![image](https://user-images.githubusercontent.com/104830557/217040798-1edcf7ab-4772-4e3a-98ec-e859655e7679.png)
+
+- Creating active region for transistors
+- 
+- 
+### Introduction to Corner Stitching and Tech Files
+### CMOS Layout - from tech files to SPICE simulations
+### Euler's Path and Stick Diagram
+
