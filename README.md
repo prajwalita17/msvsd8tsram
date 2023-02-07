@@ -157,7 +157,7 @@ $ schematic2layout.py -h
 ### Euler's Path and Stick Diagram
 
 
-
+```
 # Home directory
 cd ~/work
 
@@ -201,3 +201,24 @@ pip install -v --no-build-isolation -e . --no-deps --install-option='-DBUILD_TES
 cd ~/Work/ALIGN-public
 
 git clone https://github.com/ALIGN-analoglayout/ALIGN-pdk-sky130
+
+chmod +x 5_setup_openpdk.sh
+
+./5_setup_align.sh
+To, then, run the ALIGN tool, cd into ALIGN-public and do:
+
+source general/bin/activate
+
+schematic2layout.py <NETLIST_DIR> -p <PDK_DIR> -c
+To test an example design named inverter_v1, cd into work folder within ALIGN-public directory and do:
+
+schematic2layout.py ../examples/inverter_v1/ -p ../pdks/FinFET14nm_Mock_PDK/
+6.1 ALIGN-SKY130 PDK
+To install the Sky130 PDK that is compatible with ALIGN tool, clone the following repo inside ALIGN-public/pdk folder.
+
+git clone https://github.com/ALIGN-analoglayout/ALIGN-pdk-sky130
+And, then use one of the examples to test the setup with:
+
+schematic2layout.py ../pdks/ALIGN-pdk-sky130/examples/telescopic_ota/ -p ../pdks/ALIGN-pdk-sky130/SKY
+
+```
