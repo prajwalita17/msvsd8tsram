@@ -57,7 +57,7 @@ Install magic and its dependencies using the following commands. The dependencie
 ```
 ### Ngspice
 Ngspice is the open source spice simulator for electric and electronic circuits. 
-Download ngspice-39 tarball `ngspice-39.tar.gz`from [https://ngspice.sourceforge.io/download.html](https://ngspice.sourceforge.io/download.html) into the work directory. Install nNgspice and all its dependicies using the following commands. 
+Download ngspice-39 tarball `ngspice-39.tar.gz`from [https://ngspice.sourceforge.io/download.html](https://ngspice.sourceforge.io/download.html) into the work directory. Install ngspice and all its dependicies using the following commands. 
 ```
 # Home directory
     $cd ~/VSD_8TSRAM
@@ -83,61 +83,52 @@ Download ngspice-39 tarball `ngspice-39.tar.gz`from [https://ngspice.sourceforge
 # Install 
     $sudo make install
 ```
-# NETGEN
+### Netgen
+
+Netgen is a tool for comparing netlists, a process known as LVS, which stands for "Layout vs. Schematic". Install netgen and all its dependicies using the following commands. 
+
 ```
 # Home directory
 cd ~/VSD_8TSRAM
-
 # Install GNU m4
 sudo apt-get install -y m4
-
 # Clone the repository
 git clone git://opencircuitdesign.com/netgen
-
 cd netgen
-
 # Configure the package
 ./configure
-
 # Compile the package
 make
-
 # Install the package
 sudo make install
 ```
-# XSCHEM
+### Xschem
+Xschem is a schematic capture program, it allows creation of hierarchical representation of circuits with a top down approach. Install xschem and all its dependicies using the following commands. 
+
 ```
 # Home directory
-cd ~/work
-
+    $cd ~/VSD_8TSRAM
 # Update the system
-sudo apt-get update 
-
+    $sudo apt-get update 
 # Install flex and bison
-sudo apt-get install -y flex bison
-
+    $sudo apt-get install -y flex bison
 # Install libjpeg-dev 
-# sudo apt-get -y install libjpeg-dev
-
+    $sudo apt-get -y install libjpeg-dev
 # Install xcb
-# sudo apt-get -y install xcb
-
+    $sudo apt-get -y install xcb
 # Clone the repository
-git clone https://github.com/StefanSchippers/xschem.git xschem-src
-
-cd xschem-src
-
+    $git clone https://github.com/StefanSchippers/xschem.git xschem-src
+    $cd xschem-src
 # Configure the installation
-./configure
-
+    $./configure
 # Compile the source
-make
-
+    $make
 # Install the software
-sudo make install
+    $sudo make install
 ```
 
-# OPEN_PDKs
+# Open_PDKs
+More information can be found on [http://opencircuitdesign.com/open_pdks/](http://opencircuitdesign.com/open_pdks/)
 ```
 # Home directory
 cd ~/VSD_8TSRAM
