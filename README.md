@@ -211,9 +211,10 @@ schematic2layout.py ../ALIGN-pdk-sky130/examples/five_transistor_ota -p ../pdks/
 ![image](https://user-images.githubusercontent.com/104830557/217892948-42cfc89b-df8e-4f48-a0d5-bbc9d4754f22.png)
 
 ### Transient Analaysis in CMOS inverter
+
 ![image](https://user-images.githubusercontent.com/104830557/217892619-3aaac162-2c3f-4811-a245-152ecafc1003.png)
 ![image](https://user-images.githubusercontent.com/104830557/217894614-6f71e536-1c11-4dd3-943d-31820b1d2e99.png)
-![image](https://user-images.githubusercontent.com/104830557/217894914-a9943a06-b8b3-405c-abd5-783f872957c8.png)
+![image](https://user-images.githubusercontent.com/104830557/217895260-eae643c1-9253-4513-ad7e-5502bb917441.png)
 
 
 | Parameter    | Value| 
