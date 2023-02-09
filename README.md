@@ -204,9 +204,20 @@ schematic2layout.py ../examples/telescopic_ota -p ../pdks/FinFET14nm_Mock_PDK/
 EXAMPLE 2:
 schematic2layout.py ../ALIGN-pdk-sky130/examples/five_transistor_ota -p ../pdks/SKY130_PDK/
 ```
-# Pre-layout simulation using Xschem and Ngspice
+## Pre-layout simulation using Xschem and Ngspice
 
-![image](https://user-images.githubusercontent.com/104830557/217891286-a47853de-9f87-4035-829e-de8c9a048a3d.png)
+### DC Analaysis in CMOS inverter
 
+![image](https://user-images.githubusercontent.com/104830557/217892948-42cfc89b-df8e-4f48-a0d5-bbc9d4754f22.png)
+
+### Transient Analaysis in CMOS inverter
 ![image](https://user-images.githubusercontent.com/104830557/217892619-3aaac162-2c3f-4811-a245-152ecafc1003.png)
+
+| Parameter    | Value| 
+|----------|-----|
+|Rise Time|82.1 ps|
+|Fall Time|4.1 ps|
+|Cell Rise Delay|66.6 ps|
+|Cell Fall Delay|56.3 ps|
+
 
