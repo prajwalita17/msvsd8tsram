@@ -2,18 +2,16 @@
 | S. No.    | Week|Day|Action Item|Status| 
 |----------|-----|--------|-------|-----------------------|
 |1.|0|1|Install Oracle virtual box with Ubuntu 20.04|✅|
-|2.||2|Install magic and SKY130 PDKs|✅|
+|2.||2|Install Magic, ngspice and SKY130 PDKs|✅|
 |3.||2|Install ALIGN tool|✅|
 |4.||3|Create inverter and perform pre-layout using xschem or ngspice|✅|
 |5.||3|Inverter Post-layout characterization using 2)|✅|
 |6.||4|Inverter post-layout characterization using 3) |✅|
-|7.||4|Compare 5 and 6 |✅|
+|7.||4|Compare the results obtained in 5) and 6) |✅|
 |8.||5|Enroll in FREE VSD-custom layout course |✅|
 |9.||6|Create the design shown in section 7 of the course and perform pre-layout using xschem or ngspice|✅|
 |10.||6|Post layout characterization using 2) and 3)|✅|
 |11.||6|Update your findings on your GitHub repo with the title “Week 0”|✅|
-|12.||7|Status Update Call|✅|
-
 
 ### Install Oracle Virtual Box with Ubuntu 22.04
 
@@ -24,8 +22,230 @@
 5. Download **Ubuntu 22.04.1 LTS** from [https://ubuntu.com/download/desktop](https://ubuntu.com/download/desktop) and save the .exe file in **Opensourcetoolinstall** folder.
 
 ## Install Magic and SKY130 PDKs
+### Magic
+Magic is an open-source VLSI layout tool.
+Install magic and its dependencies using the following commands. The dependencies can also be installed using Synaptic Manager. Synaptic manager can be first installed using `sudo apt install synaptic`.
 
+```
+# Ipdate your system
+    $sudo apt update
+    $sudo apt install -y git
+# Install build-essential tools
+    $sudo apt install -y build-essential
+# Install csh
+    $sudo apt install -y csh
+# Install x11
+    $sudo apt install -y x11-apps
+# Install X11
+    $sudo apt install -y x11-xserver-utils
+# Install OpenGL
+    $sudo apt install -y libglu1-mesa-dev freeglut3-dev mesa-common-dev
+# Cnstall Tcl/Tk
+    $sudo apt install -y tcl-dev tk-dev
+# Change to the work directory
+    $cd ~/VSD_8TSRAM
+# Clone the git repo
+    $git clone git://opencircuitdesign.com/magic
+# Change into the magic directory
+    $cd magic
+# Configure magic
+    $./configure
+# Build magic
+    $make
+# Install magic
+    $sudo make install
+```
+# NGSPICE
+
+```
+# Home directory
+cd ~/VSD_8TSRAM
+
+
+url=https://sourceforge.net/projects/ngspice/files/ng-spice-rework/${version}/${package}
+
+# Download the ngspice tar file
+
+tar -xzvf "$package"
+
+  mkdir release
+sudo
+
+cd release 
+
+# Update the system
+sudo apt-get update
+
+# Install Xaw library
+sudo apt-get -y install libxaw7-dev
+
+# Install xterm
+sudo apt-get -y install xterm
+
+# Install bison
+sudo apt-get -y install bison
+
+# Install flex
+sudo apt-get -y install flex
+
+# Install readlines library
+sudo apt-get -y install libreadlines6-dev
+
+# Run configuration
+../configure  --with-x --with-readline=yes --disable-debug
+
+# Compile
+make 
+
+# Install 
+sudo make install
+```
+# NETGEN
+```
+# Home directory
+cd ~/VSD_8TSRAM
+
+# Install GNU m4
+sudo apt-get install -y m4
+
+# Clone the repository
+git clone git://opencircuitdesign.com/netgen
+
+cd netgen
+
+# Configure the package
+./configure
+
+# Compile the package
+make
+
+# Install the package
+sudo make install
+```
+# XSCHEM
+```
+# Home directory
+cd ~/work
+
+# Update the system
+sudo apt-get update 
+
+# Install flex and bison
+sudo apt-get install -y flex bison
+
+# Install libjpeg-dev 
+# sudo apt-get -y install libjpeg-dev
+
+# Install xcb
+# sudo apt-get -y install xcb
+
+# Clone the repository
+git clone https://github.com/StefanSchippers/xschem.git xschem-src
+
+cd xschem-src
+
+# Configure the installation
+./configure
+
+# Compile the source
+make
+
+# Install the software
+sudo make install
+```
+
+# OPEN_PDKs
+```
+# Home directory
+cd ~/VSD_8TSRAM
+
+# Install setup-tools
+sudo apt-get -y install python3-setuptools
+
+
+# Clone the Open PDK repository
+if [ -d ~/work/open_pdks]
+then
+    echo "Already cloned!"
+else 
+    git clone git://opencircuitdesign.com/open_pdks
+fi
+
+cd open_pdks
+
+# Configure Open PDK to use Sky130 libraries
+./configure --enable-sky130-pdk
+
+# Compile the PDK
+make 
+
+# Install the PDK
+sudo make install
+```
 ## Install ALIGN Tool
+
+```
+# Home directory
+cd ~/work
+
+# Clone the ALIGN source
+git clone https://github.com/ALIGN-analoglayout/ALIGN-public
+cd ALIGN-public
+
+# Install virtual environment for python
+sudo apt -y install python3.8-venv
+
+# Install the latest pip
+sudo apt-get -y install python3-pip
+
+# Create python virtual envronment
+python3 -m venv general
+
+source general/bin/activate
+
+python3 -m pip install pip --upgrade
+pip install align
+pip install pandas
+pip install scipy
+pip install nltk
+pip install gensim
+pip install setuptools wheel pybind11 scikit-build cmake ninja
+
+# Install ALIGN as a user
+pip install -v .
+
+# Install ALIGN  as a developer
+pip install -e .
+
+pip install -v -e .[test] --no-build-isolation
+pip install -v --no-build-isolation -e . --no-deps --install-option='-DBUILD_TESTING=ON'
+
+# Clone the Sky130 PDK
+cd ~/Work/ALIGN-public
+
+git clone https://github.com/ALIGN-analoglayout/ALIGN-pdk-sky130
+
+chmod +x 5_setup_openpdk.sh
+
+./5_setup_align.sh
+To, then, run the ALIGN tool, cd into ALIGN-public and do:
+
+source general/bin/activate
+
+schematic2layout.py <NETLIST_DIR> -p <PDK_DIR> -c
+To test an example design named inverter_v1, cd into work folder within ALIGN-public directory and do:
+
+schematic2layout.py ../examples/inverter_v1/ -p ../pdks/FinFET14nm_Mock_PDK/
+6.1 ALIGN-SKY130 PDK
+To install the Sky130 PDK that is compatible with ALIGN tool, clone the following repo inside ALIGN-public/pdk folder.
+
+git clone https://github.com/ALIGN-analoglayout/ALIGN-pdk-sky130
+And, then use one of the examples to test the setup with:
+
+schematic2layout.py ../pdks/ALIGN-pdk-sky130/examples/telescopic_ota/ -p ../pdks/ALIGN-pdk-sky130/SKY
+
+```
+
 
 ### Step 0: Check prerequisites
 The following dependencies must be met by your system:
@@ -181,70 +401,4 @@ make
 
 # Install the PDK
 sudo make install
-```
-
-```
-# Home directory
-cd ~/work
-
-# Clone the ALIGN source
-git clone https://github.com/ALIGN-analoglayout/ALIGN-public
-
-cd ALIGN-public
-
-# Install virtual environment for python
-sudo apt -y install python3.8-venv
-
-# Install the latest pip
-sudo apt-get -y install python3-pip
-
-# Create python virtual envronment
-python3 -m venv general
-
-source general/bin/activate
-
-python3 -m pip install pip --upgrade
-
-pip install align
-pip install pandas
-pip install scipy
-pip install nltk
-pip install gensim
-
-pip install setuptools wheel pybind11 scikit-build cmake ninja
-
-# Install ALIGN as a user
-pip install -v .
-
-# Install ALIGN  as a developer
-pip install -e .
-
-pip install -v -e .[test] --no-build-isolation
-pip install -v --no-build-isolation -e . --no-deps --install-option='-DBUILD_TESTING=ON'
-
-
-# Clone the Sky130 PDK
-cd ~/Work/ALIGN-public
-
-git clone https://github.com/ALIGN-analoglayout/ALIGN-pdk-sky130
-
-chmod +x 5_setup_openpdk.sh
-
-./5_setup_align.sh
-To, then, run the ALIGN tool, cd into ALIGN-public and do:
-
-source general/bin/activate
-
-schematic2layout.py <NETLIST_DIR> -p <PDK_DIR> -c
-To test an example design named inverter_v1, cd into work folder within ALIGN-public directory and do:
-
-schematic2layout.py ../examples/inverter_v1/ -p ../pdks/FinFET14nm_Mock_PDK/
-6.1 ALIGN-SKY130 PDK
-To install the Sky130 PDK that is compatible with ALIGN tool, clone the following repo inside ALIGN-public/pdk folder.
-
-git clone https://github.com/ALIGN-analoglayout/ALIGN-pdk-sky130
-And, then use one of the examples to test the setup with:
-
-schematic2layout.py ../pdks/ALIGN-pdk-sky130/examples/telescopic_ota/ -p ../pdks/ALIGN-pdk-sky130/SKY
-
 ```
