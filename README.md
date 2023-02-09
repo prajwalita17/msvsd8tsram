@@ -205,6 +205,8 @@ EXAMPLE 2:
 schematic2layout.py ../ALIGN-pdk-sky130/examples/five_transistor_ota -p ../pdks/SKY130_PDK/
 ```
 # Pre-layout simulation using Xschem and Ngspice
-![image](https://user-images.githubusercontent.com/104830557/217890151-97709e66-e4e1-4184-9a0d-1bf26b7f77c4.png)
 
+![image](https://user-images.githubusercontent.com/104830557/217891286-a47853de-9f87-4035-829e-de8c9a048a3d.png)
+
+![image](https://user-images.githubusercontent.com/104830557/217892619-3aaac162-2c3f-4811-a245-152ecafc1003.png)
 
