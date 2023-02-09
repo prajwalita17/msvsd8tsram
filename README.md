@@ -178,18 +178,24 @@ ALIGN is an open source automatic layout generator for analog circuits. Install 
     $pip3 install wheel setuptools pip --upgrade
     $pip install -v --no-build-isolation -e . --no-deps --install-option='-DBUILD_TESTING=ON'
 ```
-Making ALIGN Portable to Sky130 tehnology
+#### Making ALIGN Portable to Sky130 tehnology
 Clone the following Repository inside ALIGN-public directory
+```
     $git clone https://github.com/ALIGN-analoglayout/ALIGN-pdk-sky130
+```
 Move SKY130_PDK folder to ~/VSD_8TSRAM/ALIGN-public/pdks.
 Everytime we start the tool in new terminal, run the following commands.
+
 ```
-#Running ALIGN TOOL
+# Running ALIGN TOOL
     $python -m venv general
     $source general/bin/activate
+```
 Commands to run ALIGN (goto ALIGN-public directory)
+```
     $mkdir work
     $cd work
+```
 General syntax to give inputs
 ```
 schematic2layout.py <NETLIST_DIR> -p <PDK_DIR> -c
