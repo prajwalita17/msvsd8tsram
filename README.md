@@ -214,10 +214,13 @@ schematic2layout.py ../ALIGN-pdk-sky130/examples/five_transistor_ota -p ../pdks/
 ![image](https://user-images.githubusercontent.com/104830557/217896817-b1cc6ba3-343f-476d-9bec-bf5c09375f64.png)
 
 From the voltage transfer characteristics, we get the values of the following parameters.
+
 $V_{OL}$= 0 V, $V_{IL}$= 750 mV V, $V_{IH}$= 921.8 mA V, $V_{OH}$= 1.8 V
 
 Noise Margins can be calculated as
+
 NML = $V_{IL}$ - $V_{OL}$= 750 mV
+
 NMH = $V_{OH}$ - $V_{IH}$= 878 mV
 
 
