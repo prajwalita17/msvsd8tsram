@@ -209,6 +209,12 @@ schematic2layout.py ../ALIGN-pdk-sky130/examples/five_transistor_ota -p ../pdks/
 ### DC Analaysis in CMOS inverter
 
 ![image](https://user-images.githubusercontent.com/104830557/217892948-42cfc89b-df8e-4f48-a0d5-bbc9d4754f22.png)
+![image](https://user-images.githubusercontent.com/104830557/217897083-a9f9b789-49d3-4bbd-861f-c7a76b4d5e0c.png)
+
+![image](https://user-images.githubusercontent.com/104830557/217896817-b1cc6ba3-343f-476d-9bec-bf5c09375f64.png)
+
+From the voltage transfer characteristics, we get the values of the following parameters.
+V_{OH}
 
 ### Transient Analaysis in CMOS inverter
 
