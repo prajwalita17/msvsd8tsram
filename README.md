@@ -55,50 +55,33 @@ Install magic and its dependencies using the following commands. The dependencie
 # Install magic
     $sudo make install
 ```
-# NGSPICE
-
+### Ngspice
+Ngspice is the open source spice simulator for electric and electronic circuits. 
+Download ngspice-39 tarball `ngspice-39.tar.gz`from [https://ngspice.sourceforge.io/download.html](https://ngspice.sourceforge.io/download.html) into the work directory. Install nNgspice and all its dependicies using the following commands. 
 ```
 # Home directory
-cd ~/VSD_8TSRAM
-
-
-url=https://sourceforge.net/projects/ngspice/files/ng-spice-rework/${version}/${package}
-
-# Download the ngspice tar file
-
-tar -xzvf "$package"
-
-  mkdir release
-sudo
-
-cd release 
-
+    $cd ~/VSD_8TSRAM
+    $tar -xzvf ngspice-39.tar.gz
+    $mkdir release
+    $cd release 
 # Update the system
-sudo apt-get update
-
+    $sudo apt-get update
 # Install Xaw library
-sudo apt-get -y install libxaw7-dev
-
+    $sudo apt-get -y install libxaw7-dev
 # Install xterm
-sudo apt-get -y install xterm
-
+    $sudo apt-get -y install xterm
 # Install bison
-sudo apt-get -y install bison
-
+    $sudo apt-get -y install bison
 # Install flex
-sudo apt-get -y install flex
-
+    $sudo apt-get -y install flex
 # Install readlines library
-sudo apt-get -y install libreadlines6-dev
-
+    $sudo apt-get -y install libreadlines6-dev
 # Run configuration
-../configure  --with-x --with-readline=yes --disable-debug
-
-# Compile
-make 
-
+    $../configure  --with-x --with-readline=yes --disable-debug
+# Build
+    $make 
 # Install 
-sudo make install
+    $sudo make install
 ```
 # NETGEN
 ```
