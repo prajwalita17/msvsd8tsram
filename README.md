@@ -14,8 +14,26 @@
 |11.||6|Update your findings on your GitHub repo with the title “Week 0”|✅|
 
 # Index
-
-
+- [Installation of Oracle Virtual Box with Ubuntu 22.04](https://github.com/prajwalita17/msvsd8tsram/blob/main/README.md#installation-of-oracle-virtual-box-with-ubuntu-2204)
+- [Installation of Tools and SKY130 PDKs](https://github.com/prajwalita17/msvsd8tsram/blob/main/README.md#1-installation-of-tools-and-sky130-pdks)
+  * [Magic](https://github.com/prajwalita17/msvsd8tsram/blob/main/README.md#1a-magic)
+  * [Ngspice](https://github.com/prajwalita17/msvsd8tsram/blob/main/README.md#1b-ngspice)
+  * [Netgen](https://github.com/prajwalita17/msvsd8tsram/edit/main/README.md#1c-netgen)
+  * [Xschem](https://github.com/prajwalita17/msvsd8tsram/edit/main/README.md#1d-xschem)
+  * [Open_PDKs](https://github.com/prajwalita17/msvsd8tsram/edit/main/README.md#1e-open_pdks)
+  * [ALIGN Tool](https://github.com/prajwalita17/msvsd8tsram/edit/main/README.md#1f-align-tool)
+- [Simulation of Inverter using Xschem and Ngspice](https://github.com/prajwalita17/msvsd8tsram/edit/main/README.md#2-pre-layout-simulation-using-xschem-and-ngspice)
+  * [Pre-layout Simulation](#pre-layout-simulation)
+    + [DC Analaysis of CMOS inverter](https://github.com/prajwalita17/msvsd8tsram/edit/main/README.md#2a-dc-analaysis-of-cmos-inverter)
+    + [Transient Analaysis of CMOS inverter](https://github.com/prajwalita17/msvsd8tsram/edit/main/README.md#2b-transient-analaysis-of-cmos-inverter)
+- [Simulation of Inverter using Ngspice]()
+  * [Pre-layout Simulation](https://github.com/prajwalita17/msvsd8tsram/edit/main/README.md#3a-pre-layout-simulation-of-inverter-using-ngspice)
+  * [Post-layout Simulation](https://github.com/prajwalita17/msvsd8tsram/edit/main/README.md#3b-post-layout-simulation-of-inverter-using-ngspice)
+  * [Comparison of pre-layout and post-layout timing parameters](https://github.com/prajwalita17/msvsd8tsram/edit/main/README.md#3c-comparison-of-pre-layout-and-post-layout-timing-parameters-for-inverter)
+- [Simulation of a function using Magic and Ngspice](#simulation-of-a-function-using-magic-and-ngspice)
+  * [Pre-layout Simulation](https://github.com/prajwalita17/msvsd8tsram/edit/main/README.md#4a-pre-layout-simulation-of-function-fn-using-ngspice)
+  * [Post-layout Simulation](https://github.com/prajwalita17/msvsd8tsram/edit/main/README.md#4b-post-layout-simulation-of-function-fn-using-magic-and-ngspice)
+  * [Comparison of results](#comparison-of-results)
 # Installation of Oracle Virtual Box with Ubuntu 22.04
 
 1. Create a new directory **Opensourcetoolinstall** in D: Drive. Make sure there is atleast 150 GB disk space in the drive.
