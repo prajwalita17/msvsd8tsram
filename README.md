@@ -325,11 +325,12 @@ The timing parameters obtained from pre-layout simulations is tabulated below.
 |Cell Rise Delay|66.6 ps|
 |Cell Fall Delay|56.3 ps|
 
-# 3. Simulation of Inverter using Ngspice
+
+# 4. Simulation of Inverter using Ngspice
 
 The tech file ['min2.tech']() and model file used [130nm BSIM4 model card for bulk CMOS](http://ptm.asu.edu/modelcard/2006/130nm_bulk.pm) has been for simulation of inverter and boolean function in the next section.
 
-## 3.a. Pre-layout Simulation of Inverter using Ngspice
+## 4.a. Pre-layout Simulation of Inverter using Ngspice
 The figure shown the pre-layout netlist of the inverter
 
 ![image](https://user-images.githubusercontent.com/104830557/218102867-11f3b0fd-0f88-41c6-8e6e-430f0f9a5224.png)
@@ -337,7 +338,7 @@ The figure shown the pre-layout netlist of the inverter
 
 ![image](https://user-images.githubusercontent.com/104830557/218084345-fe34ce3e-eea0-4c61-a677-79e4abebec33.png)
 
-## 3.b. Post-layout Simulation of Inverter using Ngspice
+## 4.b. Post-layout Simulation of Inverter using Ngspice
 The layout  'inv.mag' was drawn in Magic as shown.
 ![image](https://user-images.githubusercontent.com/104830557/218103878-9ff2a9bf-27ee-4a01-b286-c82596e604c9.png)
 
@@ -355,7 +356,7 @@ Use `ngspice inv.spice`and `plot out vs time in` to get the following plot.
 
 ![image](https://user-images.githubusercontent.com/104830557/218082285-c7cc110d-a2ef-4f98-93bc-f9784ff3692e.png)
 
-## 3.c. Comparison of Pre-layout and Post-layout timing parameters for inverter.
+## 4.c. Comparison of Pre-layout and Post-layout timing parameters for inverter.
 
 | Parameter    | Value from Pre-layout Simulation| Value from Post-layout Simulation|
 |----------|-----|-----|
@@ -363,7 +364,7 @@ Use `ngspice inv.spice`and `plot out vs time in` to get the following plot.
 |Fall Time|25.01 ps|26.97 ps|
 |Cell Rise Delay|32.79 ps|41.29 ps|
 |Cell Fall Delay|4.3 ps|4.4 ps|
-## 3.d LVS Report
+## 4.d LVS Report
 The layout vs schematic compares the pre-layout netlist with the netlist extracted from the layout. The mismatch is due to the extra parasitic capacitances in the post-layout netlist. The report `comp.out` is obtained using Netgen by typing the following command.
 ```
 ~/VSD_8TSRAM/LAB1/netgen$ netgen -batch lvs INV_pre.spice INV_post.spice
@@ -458,12 +459,12 @@ Cells have no pins;  pin matching not needed.
 Device classes INV_pre.spice and INV_post.spice are equivalent.
 Final result: Netlists do not match.
 
-# Simulation of a function using Magic and Ngspice
+# 5. Simulation of a function using Magic and Ngspice
 Euler path and stick diagrams are helpful for getting better layouts for circuits with many MOSFETs. One such funtion is implemented here using CMOS.
 Fn = Fn= [(B+D).(A+C)+E.F]'
 ![image](https://user-images.githubusercontent.com/104830557/218004046-205b15ce-bafd-4023-b527-9591cad9ea42.png)
 
-## 4.a Pre-layout Simulation of function Fn using Ngspice
+## 5.a Pre-layout Simulation of function Fn using Ngspice
 
 The netlist `fn_prelayout.spice` for the function **Fn** given can be written as 
 ```
@@ -510,7 +511,7 @@ Run the ngspice simulation using the following commands.
 ```
 ![image](https://user-images.githubusercontent.com/104830557/218006311-1a970c75-bc35-4d2d-9d40-a701253359c6.png)
 
-## 4.b Post-layout Simulation of function Fn using Magic and Ngspice
+## 5.b Post-layout Simulation of function Fn using Magic and Ngspice
 ![image](https://user-images.githubusercontent.com/104830557/218008163-b35a4fea-e8f9-4428-a76f-b2da4c400984.png)
 
 Extract the netlist from the from the magic layout by typing these commands in tkcon 2.3 Main console.
