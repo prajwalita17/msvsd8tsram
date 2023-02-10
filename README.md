@@ -232,9 +232,9 @@ NMH = $V_{OH}$ - $V_{IH}$= 878 mV
 
 The timing parameters are calculated as
 
-Rise time = **time(@80 % of Vout)** - **t(@20% of Vout)**
+Rise time = **time(@80 % of Vout)** - **time(@20% of Vout)**
 
-Fall time = **time(@20 % of Vout)** - **t(@80% of Vout)**
+Fall time = **time(@20 % of Vout)** - **time(@80% of Vout)**
 
 Cell Rise Delay =**time taken by output to rise to its 50% value** - **time taken by the input to fall to its 50% value**
 
