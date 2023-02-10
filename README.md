@@ -245,8 +245,18 @@ Cell Rise Delay =**time taken by output to fall to its 50% value** - **time take
 |Cell Fall Delay|56.3 ps|
 
 # Pre-layout Simulation of Inverter using Ngspice
+![image](https://user-images.githubusercontent.com/104830557/218084345-fe34ce3e-eea0-4c61-a677-79e4abebec33.png)
+
 # Post-layout Simulation of Inverter using Ngspice
 ![image](https://user-images.githubusercontent.com/104830557/218082285-c7cc110d-a2ef-4f98-93bc-f9784ff3692e.png)
+
+# Comparison of Pre-layout and Post-layout timing parameters for inverter.
+| Parameter    | Value from Pre-layout Simulation| Value from Post-layout Simulation|
+|----------|-----|-----|
+|Rise Time|40.8 ps|54.679 ps|
+|Fall Time|25.01 ps|26.97 ps|
+|Cell Rise Delay|32.79 ps|41.29 ps|
+|Cell Fall Delay|4.3 ps|4.4 ps|
 
 # Pre-layout Simulation of function Fn using Ngspice
 ![image](https://user-images.githubusercontent.com/104830557/218004046-205b15ce-bafd-4023-b527-9591cad9ea42.png)
