@@ -361,6 +361,106 @@ Use `ngspice inv.spice`and `plot out vs time in` to get the following plot.
 |Fall Time|25.01 ps|26.97 ps|
 |Cell Rise Delay|32.79 ps|41.29 ps|
 |Cell Fall Delay|4.3 ps|4.4 ps|
+## 3.d LVS Report
+The layout vs schematic compares the pre-layout netlist with the netlist extracted from the layout. The mismatch is due to the extra parasitic capacitances in the post-layout netlist. The report `comp.out` is obtained using Netgen by typing the following command.
+```
+~/VSD_8TSRAM/LAB1/netgen$ netgen -batch lvs INV_pre.spice INV_post.spice
+```
+The content of the report is as shown.
+
+Subcircuit summary:
+Circuit 1: INV_pre.spice                   |Circuit 2: INV_post.spice
+-------------------------------------------|-------------------------------------------
+nmos (1)                                   |nmos (1)
+pmos (1)                                   |pmos (1)
+vsrc (2)                                   |vsrc (2)
+(no matching element)                      |c (5)
+Number of devices: 4 **Mismatch**          |Number of devices: 9 **Mismatch**
+Number of nets: 5                          |Number of nets: 5
+---------------------------------------------------------------------------------------
+NET mismatches: Class fragments follow (with fanout counts):
+Circuit 1: INV_pre.spice                   |Circuit 2: INV_post.spice
+---------------------------------------------------------------------------------------
+Net: out                                   |Net: out
+  nmos/(drain|source) = 1                  |  nmos/(drain|source) = 1
+  pmos/(drain|source) = 1                  |  pmos/(drain|source) = 1
+                                           |  c/bottom = 1
+                                           |  c/top = 1
+                                           |
+Net: vdd                                   |Net: vdd
+  pmos/(drain|source) = 1                  |  pmos/(drain|source) = 1
+  pmos/bulk = 1                            |  pmos/bulk = 1
+  vsrc/pos = 1                             |  vsrc/pos = 1
+                                           |  c/top = 2
+                                           |
+Net: gnd                                   |(no matching net)
+  nmos/(drain|source) = 1                  |
+  nmos/bulk = 1                            |
+  vsrc/neg = 1                             |
+                                           |
+Net: in                                    |(no matching net)
+  nmos/gate = 1                            |
+  pmos/gate = 1                            |
+  vsrc/pos = 1                             |
+---------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+(no matching net)                          |Net: gnd
+                                           |  nmos/(drain|source) = 1
+                                           |  nmos/bulk = 1
+                                           |  c/bottom = 3
+                                           |  vsrc/neg = 1
+                                           |
+(no matching net)                          |Net: in
+                                           |  nmos/gate = 1
+                                           |  pmos/gate = 1
+                                           |  c/bottom = 1
+                                           |  c/top = 2
+                                           |  vsrc/pos = 1
+---------------------------------------------------------------------------------------
+DEVICE mismatches: Class fragments follow (with node fanout counts):
+Circuit 1: INV_pre.spice                   |Circuit 2: INV_post.spice
+---------------------------------------------------------------------------------------
+(no matching instance)                     |Instance: c:0
+                                           |  top = 5
+                                           |  bottom = 6
+                                           |
+(no matching instance)                     |Instance: c:2
+                                           |  top = 4
+                                           |  bottom = 6
+                                           |
+(no matching instance)                     |Instance: c:4
+                                           |  top = 5
+                                           |  bottom = 6
+                                           |
+(no matching instance)                     |Instance: c:1
+                                           |  top = 6
+                                           |  bottom = 4
+                                           |
+(no matching instance)                     |Instance: c:3
+                                           |  top = 6
+                                           |  bottom = 6
+---------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+Instance: pmos:1001                        |Instance: c:4
+  pos = 3                                  |  pos = 6
+  neg = 3                                  |  neg = 6
+---------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+Instance: pmos:1001                        |Instance: pmos:1001
+  (drain,source) = (3,2)                   |  (drain,source) = (5,4)
+  gate = 3                                 |  gate = 6
+  bulk = 3                                 |  bulk = 5
+---------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+Instance: nmos:1000                        |Instance: nmos:1000
+  (drain,source) = (3,2)                   |  (drain,source) = (6,4)
+  gate = 3                                 |  gate = 6
+  bulk = 3                                 |  bulk = 6
+---------------------------------------------------------------------------------------
+Netlists do not match.
+Cells have no pins;  pin matching not needed.
+Device classes INV_pre.spice and INV_post.spice are equivalent.
+Final result: Netlists do not match.
 
 # Simulation of a function using Magic and Ngspice
 Euler path and stick diagrams are helpful for getting better layouts for circuits with many MOSFETs. One such funtion is implemented here using CMOS.
@@ -482,6 +582,17 @@ Run the ngspice simulation using the following commands.
 
 ## 4.c. Comparison of results
 We can note that the graph of out vs time for both pre-layout simulation and post layout simulation are similar. Pre-layout simulation considers zero net delays and parasitic capacitances, hence the timing values are more optimistic. Post- layout simulation includes parasitic capacitance and non-zero netdelays, hence the timing values are more accurate.
+## 4.d LVS Report
+
+The layout vs schematic compares the pre-layout netlist with the netlist extracted from the layout. The mismatch is due to the extra parasitic capacitances in the post-layout netlist. The report `comp.out` is obtained using Netgen by typing the following command.
+```
+~/VSD_8TSRAM/LAB1/netgen$ netgen -batch lvs INV_pre.spice INV_post.spice
+```
+The content of the report is as shown.
+![image](https://user-images.githubusercontent.com/104830557/218120933-50b65183-17cf-464f-9a6e-413828482d80.png)
+
+It can be seen that except for 4 extra devices(Capacitances) and corresponding nets, the pre-layout netlist and the post-layout extracted netlist are same.
+
 
 
 
