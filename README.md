@@ -22,6 +22,7 @@
   * [Xschem](https://github.com/prajwalita17/msvsd8tsram/edit/main/README.md#1d-xschem)
   * [Open_PDKs](https://github.com/prajwalita17/msvsd8tsram/edit/main/README.md#1e-open_pdks)
   * [ALIGN Tool](https://github.com/prajwalita17/msvsd8tsram/edit/main/README.md#1f-align-tool)
+  * [Verifying the open_pdk installation](https://github.com/prajwalita17/msvsd8tsram/edit/main/README.md#2g-verifiying-the-open_pdk-installation)
 - [Simulation of Inverter using Xschem and Ngspice](https://github.com/prajwalita17/msvsd8tsram/edit/main/README.md#2-pre-layout-simulation-using-xschem-and-ngspice)
   * [Pre-layout Simulation](#pre-layout-simulation)
     + [DC Analaysis of CMOS inverter](https://github.com/prajwalita17/msvsd8tsram/edit/main/README.md#2a-dc-analaysis-of-cmos-inverter)
@@ -225,22 +226,66 @@ schematic2layout.py ../examples/telescopic_ota -p ../pdks/FinFET14nm_Mock_PDK/
 EXAMPLE 2:
 schematic2layout.py ../ALIGN-pdk-sky130/examples/five_transistor_ota -p ../pdks/SKY130_PDK/
 ```
+## 2.g. Verifiying the open_pdk installation
+An initial working directory can be made by copying the required files as follows:
+```
+$ mkdir LAB1
+$ cd LAB1
+$ mkdir mag
+$ mkdir netgen
+$ mkdir xschem
+$ cd xschem
+$ cp /usr/local/share/pdk/sky130A/libs.tech/xschem/xschemrc .
+$ cp /usr/local/share/pdk/sky130A/libs.tech/ngspice/spinit .spiceinit
+$ cd ../mag
+$ cp /usr/local/share/pdk/sky130A/libs.tech/magic/sky130A.magicrc .magicrc
+$ cd ../netgen
+$ cp /usr/local/share/pdk/sky130A/libs.tech/netgen//sky130A_setup.tcl .
+```
 # 3. Simulation of Inverter using Xschem and Ngspice
+Invoke Xschem by typing `xschem` as shown
+```
+     ~/VSD_8TSRAM/LAB1/xschem$ xschem
+```
+
+![image](https://user-images.githubusercontent.com/104830557/218099150-16d93b7a-4bfe-42de-99da-753df315fbc7.png)
+
 ## 3.a Pre-layout Simulation using Xschem and Ngspice
 
 ### 3.a.i. DC Analaysis of CMOS inverter
 
+Create the schematic for inverter in Xschem. The TT_MODELS contain the process corner details for PMOS and NMOS. The contents of TT_MODELS will be
+```
+name= TT_MODELS1
+only_toplevel=true
+format="tcleval(@value)"
+** opencircuitdesign pdks install
+.lib $::SKYWATER_MODELS/sky130.lib.spice tt
+"
+spice_ignore=false
+```
+DC analysis is done by using the `.dc` command using `code_shown.sym` from components.
+```
+.dc Vin 0 1.8 0.01
+.save all
+```
+The schematic is as shown.
 
 ![image](https://user-images.githubusercontent.com/104830557/217892948-42cfc89b-df8e-4f48-a0d5-bbc9d4754f22.png)
+
+Go to `Options> Spice netlist` to set the netlist option. Click on `Netlist` from the menu to generate a spice file for the schematic created. Click on `Simulate` to run the simulation and obtain the voltage-transfer characteristic(VTC) for the inverter.
+
 ![image](https://user-images.githubusercontent.com/104830557/217897083-a9f9b789-49d3-4bbd-861f-c7a76b4d5e0c.png)
+
+The VTC is as shown.
 
 ![image](https://user-images.githubusercontent.com/104830557/217896817-b1cc6ba3-343f-476d-9bec-bf5c09375f64.png)
 
-From the voltage transfer characteristics, we get the values of the following parameters.
+From the VTC, we get the values of the following parameters.
 
 $V_{OL}$= 0 V, $V_{IL}$= 750 mV V, $V_{IH}$= 921.8 mA V, $V_{OH}$= 1.8 V
 
-Noise Margins can be calculated as
+The obtained values can be used to calculate noise margins.
 
 NML = $V_{IL}$ - $V_{OL}$= 750 mV
 
@@ -248,9 +293,14 @@ NMH = $V_{OH}$ - $V_{IH}$= 878 mV
 
 
 ### 3.a.ii. Transient Analaysis of CMOS inverter
+The transient analysis of the inverter can be obtained by adding `.tran ` in the `code_shown.sym` block.
 
 ![image](https://user-images.githubusercontent.com/104830557/217892619-3aaac162-2c3f-4811-a245-152ecafc1003.png)
+Go to `Options> Spice netlist` to set the netlist option. Click on `Netlist` from the menu to generate a spice file for the schematic created. Click on `Simulate` to run the simulation and obtain the out vs time and in vs time.
+
 ![image](https://user-images.githubusercontent.com/104830557/217894614-6f71e536-1c11-4dd3-943d-31820b1d2e99.png)
+The graph shows the input and output variations with time. Timing parameters can be calculated from the graph below.
+
 ![image](https://user-images.githubusercontent.com/104830557/217895260-eae643c1-9253-4513-ad7e-5502bb917441.png)
 
 The timing parameters are calculated as
@@ -263,6 +313,7 @@ Cell Rise Delay =**time taken by output to rise to its 50% value** - **time take
 
 Cell Rise Delay =**time taken by output to fall to its 50% value** - **time taken by the input to rise to its 50% value**
 
+The timing parameters obtained from pre-layout simulations is tabulated below.
 
 | Parameter    | Value| 
 |----------|-----|
