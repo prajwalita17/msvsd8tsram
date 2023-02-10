@@ -47,7 +47,7 @@
 # 2. Installation of Tools and SKY130 PDKs
 ## 2.a. Magic
 Magic is an open-source VLSI layout tool.
-Install magic and its dependencies using the following commands. The dependencies can also be installed using Synaptic Manager. Synaptic manager can be first installed using `sudo apt install synaptic`.
+Install magic and its dependencies using the following commands. The dependencies can also be installed using Synaptic Manager. Synaptic manager can be first installed using `sudo apt install synaptic`.\
 
 ```
 # Ipdate your system
