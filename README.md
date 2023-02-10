@@ -30,11 +30,11 @@
   * [Pre-layout Simulation](https://github.com/prajwalita17/msvsd8tsram/edit/main/README.md#3a-pre-layout-simulation-of-inverter-using-ngspice)
   * [Post-layout Simulation](https://github.com/prajwalita17/msvsd8tsram/edit/main/README.md#3b-post-layout-simulation-of-inverter-using-ngspice)
   * [Comparison of pre-layout and post-layout timing parameters](https://github.com/prajwalita17/msvsd8tsram/edit/main/README.md#3c-comparison-of-pre-layout-and-post-layout-timing-parameters-for-inverter)
-- [Simulation of a function using Magic and Ngspice](#simulation-of-a-function-using-magic-and-ngspice)
+- [Simulation of a function *Fn= [(B+D).(A+C)+E.F]'* using Magic and Ngspice](#simulation-of-a-function-using-magic-and-ngspice)
   * [Pre-layout Simulation](https://github.com/prajwalita17/msvsd8tsram/edit/main/README.md#4a-pre-layout-simulation-of-function-fn-using-ngspice)
   * [Post-layout Simulation](https://github.com/prajwalita17/msvsd8tsram/edit/main/README.md#4b-post-layout-simulation-of-function-fn-using-magic-and-ngspice)
   * [Comparison of results](#comparison-of-results)
-# Installation of Oracle Virtual Box with Ubuntu 22.04
+# 1. Installation of Oracle Virtual Box with Ubuntu 22.04
 
 1. Create a new directory **Opensourcetoolinstall** in D: Drive. Make sure there is atleast 150 GB disk space in the drive.
 2. Go to [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
@@ -43,8 +43,8 @@
 5. Download **Ubuntu 22.04.1 LTS** from [https://ubuntu.com/download/desktop](https://ubuntu.com/download/desktop) and save the .exe file in **Opensourcetoolinstall** folder.
 6. Install Ubuntu 22.04.1 LTS in the virtualbox.
 
-# 1. Installation of Tools and SKY130 PDKs
-## 1.a. Magic
+# 2. Installation of Tools and SKY130 PDKs
+## 2.a. Magic
 Magic is an open-source VLSI layout tool.
 Install magic and its dependencies using the following commands. The dependencies can also be installed using Synaptic Manager. Synaptic manager can be first installed using `sudo apt install synaptic`.
 
@@ -77,7 +77,7 @@ Install magic and its dependencies using the following commands. The dependencie
 # Install magic
     $sudo make install
 ```
-## 1.b. Ngspice
+## 2.b. Ngspice
 Ngspice is the open source spice simulator for electric and electronic circuits. 
 Download ngspice-39 tarball `ngspice-39.tar.gz`from [https://ngspice.sourceforge.io/download.html](https://ngspice.sourceforge.io/download.html) into the work directory. Install ngspice and all its dependicies using the following commands. 
 ```
@@ -105,7 +105,7 @@ Download ngspice-39 tarball `ngspice-39.tar.gz`from [https://ngspice.sourceforge
 # Install 
     $sudo make install
 ```
-## 1.c. Netgen
+## 2.c. Netgen
 Netgen is a tool for comparing netlists, a process known as LVS, which stands for "Layout vs. Schematic". Install netgen and all its dependicies using the following commands. 
 
 ```
@@ -123,7 +123,7 @@ make
 # Install the package
 sudo make install
 ```
-## 1.d. Xschem
+## 2.d. Xschem
 Xschem is a schematic capture program, it allows creation of hierarchical representation of circuits with a top down approach. Install xschem and all its dependicies using the following commands. 
 
 ```
@@ -148,7 +148,7 @@ Xschem is a schematic capture program, it allows creation of hierarchical repres
     $sudo make install
 ```
 
-## 1.e. Open_PDKs
+## 2.e. Open_PDKs
 Open_PDKs is distributed with files that support the Google/SkyWater sky130 open process description https://github.com/google/skywater-pdk. Open_PDKs will set up an environment for using the SkyWater sky130 process with open-source EDA tools and tool flows such as magic, qflow, openlane, netgen, klayout, etc.More information can be found on [http://opencircuitdesign.com/open_pdks/](http://opencircuitdesign.com/open_pdks/).
 Install open_pdks using the following commands.
 
@@ -167,7 +167,7 @@ Install open_pdks using the following commands.
 # Install the PDK
     $sudo make install
 ```
-## 1.f. ALIGN Tool
+## 2.f. ALIGN Tool
 ALIGN is an open source automatic layout generator for analog circuits. Install ALIGN and all its dependencies using the following commands.
 
 ```
@@ -225,9 +225,10 @@ schematic2layout.py ../examples/telescopic_ota -p ../pdks/FinFET14nm_Mock_PDK/
 EXAMPLE 2:
 schematic2layout.py ../ALIGN-pdk-sky130/examples/five_transistor_ota -p ../pdks/SKY130_PDK/
 ```
-# 2. Pre-layout Simulation using Xschem and Ngspice
+# 3. Simulation of Inverter using Xschem and Ngspice
+## 3.a Pre-layout Simulation using Xschem and Ngspice
 
-### 2.a. DC Analaysis of CMOS inverter
+### 3.a.i. DC Analaysis of CMOS inverter
 
 
 ![image](https://user-images.githubusercontent.com/104830557/217892948-42cfc89b-df8e-4f48-a0d5-bbc9d4754f22.png)
@@ -246,7 +247,7 @@ NML = $V_{IL}$ - $V_{OL}$= 750 mV
 NMH = $V_{OH}$ - $V_{IH}$= 878 mV
 
 
-### 2.b. Transient Analaysis of CMOS inverter
+### 3.a.ii. Transient Analaysis of CMOS inverter
 
 ![image](https://user-images.githubusercontent.com/104830557/217892619-3aaac162-2c3f-4811-a245-152ecafc1003.png)
 ![image](https://user-images.githubusercontent.com/104830557/217894614-6f71e536-1c11-4dd3-943d-31820b1d2e99.png)
@@ -270,6 +271,8 @@ Cell Rise Delay =**time taken by output to fall to its 50% value** - **time take
 |Cell Rise Delay|66.6 ps|
 |Cell Fall Delay|56.3 ps|
 
+# 3. Simulation of Inverter using Ngspice
+
 # 3.a. Pre-layout Simulation of Inverter using Ngspice
 ![image](https://user-images.githubusercontent.com/104830557/218084345-fe34ce3e-eea0-4c61-a677-79e4abebec33.png)
 
@@ -285,7 +288,9 @@ Cell Rise Delay =**time taken by output to fall to its 50% value** - **time take
 |Cell Rise Delay|32.79 ps|41.29 ps|
 |Cell Fall Delay|4.3 ps|4.4 ps|
 
-# 4.a Pre-layout Simulation of function Fn using Ngspice
+# Simulation of a function using Magic and Ngspice
+
+## 4.a Pre-layout Simulation of function Fn using Ngspice
 ![image](https://user-images.githubusercontent.com/104830557/218004046-205b15ce-bafd-4023-b527-9591cad9ea42.png)
 
 The model file used is [130nm BSIM4 model card for bulk CMOS](http://ptm.asu.edu/modelcard/2006/130nm_bulk.pm) .
@@ -335,7 +340,7 @@ Run the ngspice simulation using the following commands.
 ```
 ![image](https://user-images.githubusercontent.com/104830557/218006311-1a970c75-bc35-4d2d-9d40-a701253359c6.png)
 
-# 4.b Post-layout Simulation of function Fn using Magic and Ngspice
+## 4.b Post-layout Simulation of function Fn using Magic and Ngspice
 ![image](https://user-images.githubusercontent.com/104830557/218008163-b35a4fea-e8f9-4428-a76f-b2da4c400984.png)
 
 Extract the netlist from the from the magic layout by typing these commands in tkcon 2.3 Main console.
@@ -401,6 +406,7 @@ Run the ngspice simulation using the following commands.
 ```
 ![image](https://user-images.githubusercontent.com/104830557/218010876-af06f84e-8d51-47b2-8ded-4adda43f5560.png)
 
+## 4.c. Comparison of results
 We can note that the graph of out vs time for both pre-layout simulation and post layout simulation are similar. Pre-layout simulation considers zero net delays and parasitic capacitances, hence the timing values are more optimistic. Post- layout simulation includes parasitic capacitance and non-zero netdelays, hence the timing values are more accurate.
 
 
