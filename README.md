@@ -239,8 +239,7 @@ NMH = $V_{OH}$ - $V_{IH}$= 878 mV
 |Cell Fall Delay|56.3 ps|
 
 ## Pre-layout Simulation function using Ngspice
-![image](https://user-images.githubusercontent.com/104830557/218003974-3c1e817b-8926-4f9d-93e8189d14a4960d.png)
-
+![image](https://user-images.githubusercontent.com/104830557/218004046-205b15ce-bafd-4023-b527-9591cad9ea42.png)
 
 
 
