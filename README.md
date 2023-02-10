@@ -13,16 +13,20 @@
 |10.||6|Post layout characterization using 2) and 3)|✅|
 |11.||6|Update your findings on your GitHub repo with the title “Week 0”|✅|
 
-### Install Oracle Virtual Box with Ubuntu 22.04
+# Index
+
+
+# Installation of Oracle Virtual Box with Ubuntu 22.04
 
 1. Create a new directory **Opensourcetoolinstall** in D: Drive. Make sure there is atleast 150 GB disk space in the drive.
 2. Go to [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
 3. Under VirtualBox 7.0.6 platform packages, click on **Windows hosts** save the .exe file in **Opensourcetoolinstall** folder.
 4. Install the VirtualBox.
 5. Download **Ubuntu 22.04.1 LTS** from [https://ubuntu.com/download/desktop](https://ubuntu.com/download/desktop) and save the .exe file in **Opensourcetoolinstall** folder.
+6. Install Ubuntu 22.04.1 LTS in the virtualbox.
 
-## Install Magic and SKY130 PDKs
-## Magic
+# 1. Installation of Tools and SKY130 PDKs
+## 1.a. Magic
 Magic is an open-source VLSI layout tool.
 Install magic and its dependencies using the following commands. The dependencies can also be installed using Synaptic Manager. Synaptic manager can be first installed using `sudo apt install synaptic`.
 
@@ -55,7 +59,7 @@ Install magic and its dependencies using the following commands. The dependencie
 # Install magic
     $sudo make install
 ```
-## Ngspice
+## 1.b Ngspice
 Ngspice is the open source spice simulator for electric and electronic circuits. 
 Download ngspice-39 tarball `ngspice-39.tar.gz`from [https://ngspice.sourceforge.io/download.html](https://ngspice.sourceforge.io/download.html) into the work directory. Install ngspice and all its dependicies using the following commands. 
 ```
@@ -83,8 +87,7 @@ Download ngspice-39 tarball `ngspice-39.tar.gz`from [https://ngspice.sourceforge
 # Install 
     $sudo make install
 ```
-## Netgen
-
+## 1.c. Netgen
 Netgen is a tool for comparing netlists, a process known as LVS, which stands for "Layout vs. Schematic". Install netgen and all its dependicies using the following commands. 
 
 ```
@@ -102,7 +105,7 @@ make
 # Install the package
 sudo make install
 ```
-## Xschem
+## 1.d. Xschem
 Xschem is a schematic capture program, it allows creation of hierarchical representation of circuits with a top down approach. Install xschem and all its dependicies using the following commands. 
 
 ```
@@ -127,7 +130,7 @@ Xschem is a schematic capture program, it allows creation of hierarchical repres
     $sudo make install
 ```
 
-## Open_PDKs
+## 1.e. Open_PDKs
 Open_PDKs is distributed with files that support the Google/SkyWater sky130 open process description https://github.com/google/skywater-pdk. Open_PDKs will set up an environment for using the SkyWater sky130 process with open-source EDA tools and tool flows such as magic, qflow, openlane, netgen, klayout, etc.More information can be found on [http://opencircuitdesign.com/open_pdks/](http://opencircuitdesign.com/open_pdks/).
 Install open_pdks using the following commands.
 
@@ -146,7 +149,7 @@ Install open_pdks using the following commands.
 # Install the PDK
     $sudo make install
 ```
-## ALIGN Tool
+## 1.f. ALIGN Tool
 ALIGN is an open source automatic layout generator for analog circuits. Install ALIGN and all its dependencies using the following commands.
 
 ```
@@ -204,9 +207,10 @@ schematic2layout.py ../examples/telescopic_ota -p ../pdks/FinFET14nm_Mock_PDK/
 EXAMPLE 2:
 schematic2layout.py ../ALIGN-pdk-sky130/examples/five_transistor_ota -p ../pdks/SKY130_PDK/
 ```
-## Pre-layout simulation using Xschem and Ngspice
+# 2. Pre-layout Simulation using Xschem and Ngspice
 
-### DC Analaysis in CMOS inverter
+### 2.a. DC Analaysis of CMOS inverter
+
 
 ![image](https://user-images.githubusercontent.com/104830557/217892948-42cfc89b-df8e-4f48-a0d5-bbc9d4754f22.png)
 ![image](https://user-images.githubusercontent.com/104830557/217897083-a9f9b789-49d3-4bbd-861f-c7a76b4d5e0c.png)
@@ -224,7 +228,7 @@ NML = $V_{IL}$ - $V_{OL}$= 750 mV
 NMH = $V_{OH}$ - $V_{IH}$= 878 mV
 
 
-### Transient Analaysis in CMOS inverter
+### 2. b. Transient Analaysis of CMOS inverter
 
 ![image](https://user-images.githubusercontent.com/104830557/217892619-3aaac162-2c3f-4811-a245-152ecafc1003.png)
 ![image](https://user-images.githubusercontent.com/104830557/217894614-6f71e536-1c11-4dd3-943d-31820b1d2e99.png)
@@ -248,13 +252,13 @@ Cell Rise Delay =**time taken by output to fall to its 50% value** - **time take
 |Cell Rise Delay|66.6 ps|
 |Cell Fall Delay|56.3 ps|
 
-# Pre-layout Simulation of Inverter using Ngspice
+# 3.a Pre-layout Simulation of Inverter using Ngspice
 ![image](https://user-images.githubusercontent.com/104830557/218084345-fe34ce3e-eea0-4c61-a677-79e4abebec33.png)
 
-# Post-layout Simulation of Inverter using Ngspice
+# 3.b Post-layout Simulation of Inverter using Ngspice
 ![image](https://user-images.githubusercontent.com/104830557/218082285-c7cc110d-a2ef-4f98-93bc-f9784ff3692e.png)
 
-# Comparison of Pre-layout and Post-layout timing parameters for inverter.
+# 3.c Comparison of Pre-layout and Post-layout timing parameters for inverter.
 
 | Parameter    | Value from Pre-layout Simulation| Value from Post-layout Simulation|
 |----------|-----|-----|
@@ -263,7 +267,7 @@ Cell Rise Delay =**time taken by output to fall to its 50% value** - **time take
 |Cell Rise Delay|32.79 ps|41.29 ps|
 |Cell Fall Delay|4.3 ps|4.4 ps|
 
-# Pre-layout Simulation of function Fn using Ngspice
+# 4.a Pre-layout Simulation of function Fn using Ngspice
 ![image](https://user-images.githubusercontent.com/104830557/218004046-205b15ce-bafd-4023-b527-9591cad9ea42.png)
 The model file used is [130nm BSIM4 model card for bulk CMOS](http://ptm.asu.edu/modelcard/2006/130nm_bulk.pm) .
 
@@ -312,7 +316,7 @@ Run the ngspice simulation using the following commands.
 ```
 ![image](https://user-images.githubusercontent.com/104830557/218006311-1a970c75-bc35-4d2d-9d40-a701253359c6.png)
 
-# Post-layout Simulation of function Fn using Magic and Ngspice
+# 4.b Post-layout Simulation of function Fn using Magic and Ngspice
 ![image](https://user-images.githubusercontent.com/104830557/218008163-b35a4fea-e8f9-4428-a76f-b2da4c400984.png)
 
 Extract the netlist from the from the magic layout by typing these commands in tkcon 2.3 Main console.
