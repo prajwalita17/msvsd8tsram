@@ -594,8 +594,11 @@ The content of the report is as shown.
 It can be seen that except for 4 extra devices(Capacitances) and corresponding nets, the pre-layout netlist and the post-layout extracted netlist are same.
 
 
+## References
 
-
+http://opencircuitdesign.com/magic/
+http://opencircuitdesign.com/open_pdks/
+https://xschem.sourceforge.io/stefan/xschem_man/xschem_man.html
 
 
 
