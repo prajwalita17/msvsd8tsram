@@ -244,6 +244,10 @@ Cell Rise Delay =**time taken by output to fall to its 50% value** - **time take
 |Cell Rise Delay|66.6 ps|
 |Cell Fall Delay|56.3 ps|
 
+# Pre-layout Simulation of Inverter using Ngspice
+# Post-layout Simulation of Inverter using Ngspice
+![image](https://user-images.githubusercontent.com/104830557/218082285-c7cc110d-a2ef-4f98-93bc-f9784ff3692e.png)
+
 # Pre-layout Simulation of function Fn using Ngspice
 ![image](https://user-images.githubusercontent.com/104830557/218004046-205b15ce-bafd-4023-b527-9591cad9ea42.png)
 The model file used is [130nm BSIM4 model card for bulk CMOS](http://ptm.asu.edu/modelcard/2006/130nm_bulk.pm) .
