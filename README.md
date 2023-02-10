@@ -59,7 +59,7 @@ Install magic and its dependencies using the following commands. The dependencie
 # Install magic
     $sudo make install
 ```
-## 1.b Ngspice
+## 1.b. Ngspice
 Ngspice is the open source spice simulator for electric and electronic circuits. 
 Download ngspice-39 tarball `ngspice-39.tar.gz`from [https://ngspice.sourceforge.io/download.html](https://ngspice.sourceforge.io/download.html) into the work directory. Install ngspice and all its dependicies using the following commands. 
 ```
@@ -228,7 +228,7 @@ NML = $V_{IL}$ - $V_{OL}$= 750 mV
 NMH = $V_{OH}$ - $V_{IH}$= 878 mV
 
 
-### 2. b. Transient Analaysis of CMOS inverter
+### 2.b. Transient Analaysis of CMOS inverter
 
 ![image](https://user-images.githubusercontent.com/104830557/217892619-3aaac162-2c3f-4811-a245-152ecafc1003.png)
 ![image](https://user-images.githubusercontent.com/104830557/217894614-6f71e536-1c11-4dd3-943d-31820b1d2e99.png)
@@ -252,13 +252,13 @@ Cell Rise Delay =**time taken by output to fall to its 50% value** - **time take
 |Cell Rise Delay|66.6 ps|
 |Cell Fall Delay|56.3 ps|
 
-# 3.a Pre-layout Simulation of Inverter using Ngspice
+# 3.a. Pre-layout Simulation of Inverter using Ngspice
 ![image](https://user-images.githubusercontent.com/104830557/218084345-fe34ce3e-eea0-4c61-a677-79e4abebec33.png)
 
-# 3.b Post-layout Simulation of Inverter using Ngspice
+# 3.b. Post-layout Simulation of Inverter using Ngspice
 ![image](https://user-images.githubusercontent.com/104830557/218082285-c7cc110d-a2ef-4f98-93bc-f9784ff3692e.png)
 
-# 3.c Comparison of Pre-layout and Post-layout timing parameters for inverter.
+# 3.c. Comparison of Pre-layout and Post-layout timing parameters for inverter.
 
 | Parameter    | Value from Pre-layout Simulation| Value from Post-layout Simulation|
 |----------|-----|-----|
@@ -269,6 +269,7 @@ Cell Rise Delay =**time taken by output to fall to its 50% value** - **time take
 
 # 4.a Pre-layout Simulation of function Fn using Ngspice
 ![image](https://user-images.githubusercontent.com/104830557/218004046-205b15ce-bafd-4023-b527-9591cad9ea42.png)
+
 The model file used is [130nm BSIM4 model card for bulk CMOS](http://ptm.asu.edu/modelcard/2006/130nm_bulk.pm) .
 
 The netlist `fn_prelayout.spice` for the function **Fn** given can be written as 
