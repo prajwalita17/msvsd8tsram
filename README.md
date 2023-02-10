@@ -324,7 +324,13 @@ The timing parameters obtained from pre-layout simulations is tabulated below.
 
 # 3. Simulation of Inverter using Ngspice
 
+The tech file ['min2.tech']() and model file used [130nm BSIM4 model card for bulk CMOS](http://ptm.asu.edu/modelcard/2006/130nm_bulk.pm) has been for simulation of inverter and boolean function in the next section.
+
 ## 3.a. Pre-layout Simulation of Inverter using Ngspice
+The figure shown the pre-layout netlist of the inverter
+
+![image](https://user-images.githubusercontent.com/104830557/218102867-11f3b0fd-0f88-41c6-8e6e-430f0f9a5224.png)
+
 ![image](https://user-images.githubusercontent.com/104830557/218084345-fe34ce3e-eea0-4c61-a677-79e4abebec33.png)
 
 ## 3.b. Post-layout Simulation of Inverter using Ngspice
@@ -340,11 +346,11 @@ The timing parameters obtained from pre-layout simulations is tabulated below.
 |Cell Fall Delay|4.3 ps|4.4 ps|
 
 # Simulation of a function using Magic and Ngspice
-
-## 4.a Pre-layout Simulation of function Fn using Ngspice
+Euler path and stick diagrams are helpful for getting better layouts for circuits with many MOSFETs. One such funtion is implemented here using CMOS.
+Fn = Fn= [(B+D).(A+C)+E.F]'
 ![image](https://user-images.githubusercontent.com/104830557/218004046-205b15ce-bafd-4023-b527-9591cad9ea42.png)
 
-The model file used is [130nm BSIM4 model card for bulk CMOS](http://ptm.asu.edu/modelcard/2006/130nm_bulk.pm) .
+## 4.a Pre-layout Simulation of function Fn using Ngspice
 
 The netlist `fn_prelayout.spice` for the function **Fn** given can be written as 
 ```
