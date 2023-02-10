@@ -331,9 +331,25 @@ The figure shown the pre-layout netlist of the inverter
 
 ![image](https://user-images.githubusercontent.com/104830557/218102867-11f3b0fd-0f88-41c6-8e6e-430f0f9a5224.png)
 
+
 ![image](https://user-images.githubusercontent.com/104830557/218084345-fe34ce3e-eea0-4c61-a677-79e4abebec33.png)
 
 ## 3.b. Post-layout Simulation of Inverter using Ngspice
+The layout  'inv.mag' was drawn in Magic as shown.
+![image](https://user-images.githubusercontent.com/104830557/218103878-9ff2a9bf-27ee-4a01-b286-c82596e604c9.png)
+
+Extract the netlist from the layout using
+```
+extract all
+ext2spice rthesh 0 cthresh 0
+ext2spice
+```
+Simulate the spice file extracted from magic after modifications. 
+
+![image](https://user-images.githubusercontent.com/104830557/218105205-85ed2b21-1df1-4640-b39d-b40c4257add0.png)
+
+Use `ngspice inv.spice`and `plot out vs time in` to get the following plot.
+
 ![image](https://user-images.githubusercontent.com/104830557/218082285-c7cc110d-a2ef-4f98-93bc-f9784ff3692e.png)
 
 ## 3.c. Comparison of Pre-layout and Post-layout timing parameters for inverter.
