@@ -238,7 +238,7 @@ NMH = $V_{OH}$ - $V_{IH}$= 878 mV
 |Cell Rise Delay|66.6 ps|
 |Cell Fall Delay|56.3 ps|
 
-## Pre-layout Simulation function using Ngspice
+## Pre-layout Simulation of function using Ngspice
 ![image](https://user-images.githubusercontent.com/104830557/218004046-205b15ce-bafd-4023-b527-9591cad9ea42.png)
 The model file used is [130nm BSIM4 model card for bulk CMOS](http://ptm.asu.edu/modelcard/2006/130nm_bulk.pm) .
 
@@ -280,11 +280,78 @@ V6 f 0 0 pulse 0 2.5 0.6n 10p 10p 1n 2n
 Run the ngspice simulation using the following commands.
 ```
     $ngspice fn_prelayout.spice
-    ```
-    ```
+```
+```
     ngspice 2 -> run
     ngspice 3 -> plot out
-    ```
+```
+![image](https://user-images.githubusercontent.com/104830557/218006311-1a970c75-bc35-4d2d-9d40-a701253359c6.png)
+
+## Post-layout Simulation of function using Magic and Ngspice
+![image](https://user-images.githubusercontent.com/104830557/218008163-b35a4fea-e8f9-4428-a76f-b2da4c400984.png)
+
+Extract the netlist from the from the magic layout by typing these commands in tkcon 2.3 Main console.
+
+![image](https://user-images.githubusercontent.com/104830557/218009160-0503c4c0-659b-4349-92e5-3644f0f54bc8.png)
+The netlist `fn_postlayout.spice` generated is as shown. The netlist shows the parasitic capacitances also. Model file is same as the one used for pre-layout simulation. 
+
+```
+***Netlist description for post-layout simulation***
+* SPICE3 file created from fn_postlayout.ext - technology: min2
+.option scale=0.09u
+M1000 a_46_38# d a_22_38# vdd pmos w=17 l=2
++  ad=102 pd=46 as=204 ps=92
+M1001 out c a_14_9# gnd nmos w=17 l=2
++  ad=204 pd=92 as=204 ps=92
+M1002 vdd b a_46_38# vdd pmos w=17 l=2
++  ad=204 pd=92 as=0 ps=0
+M1003 gnd f a_30_9# gnd nmos w=17 l=2
++  ad=204 pd=92 as=102 ps=46
+M1004 gnd b a_14_9# gnd nmos w=17 l=2
++  ad=0 pd=0 as=0 ps=0
+M1005 out e a_22_38# vdd pmos w=17 l=2
++  ad=102 pd=46 as=0 ps=0
+M1006 a_14_38# a vdd vdd pmos w=17 l=2
++  ad=102 pd=46 as=0 ps=0
+M1007 a_14_9# a out gnd nmos w=17 l=2
++  ad=0 pd=0 as=0 ps=0
+M1008 a_30_9# e out gnd nmos w=17 l=2
++  ad=0 pd=0 as=0 ps=0
+M1009 a_22_38# f out vdd pmos w=17 l=2
++  ad=0 pd=0 as=0 ps=0
+M1010 a_22_38# c a_14_38# vdd pmos w=17 l=2
++  ad=0 pd=0 as=0 ps=0
+M1011 a_14_9# d gnd gnd nmos w=17 l=2
++  ad=0 pd=0 as=0 ps=0
+C0 a_30_9# gnd 3.37fF
+C1 a_14_9# gnd 6.82fF
+C2 out gnd 8.40fF
+C3 a_22_38# gnd 3.02fF
+C4 vdd gnd 9.58fF
+
+Vdd vdd 0 2.5
+V1 a 0 0 pulse 0 2.5 0.1n 10p 10p 1n 2n
+V2 b 0 0 pulse 0 2.5 0.2n 10p 10p 1n 2n
+V3 c 0 0 pulse 0 2.5 0.3n 10p 10p 1n 2n
+V4 d 0 0 pulse 0 2.5 0.4n 10p 10p 1n 2n
+V5 e 0 0 pulse 0 2.5 0.5n 10p 10p 1n 2n
+V6 f 0 0 pulse 0 2.5 0.6n 10p 10p 1n 2n
+***Simulation commands***
+.op
+.tran 10p 4n
+*** .include model file ***
+.include  my_model_file.mod
+.end
+```
+Run the ngspice simulation using the following commands.
+```
+    $ngspice fn_postlayout.spice
+```
+```
+    ngspice 2 -> run
+    ngspice 3 -> plot out
+```
+![image](https://user-images.githubusercontent.com/104830557/218010876-af06f84e-8d51-47b2-8ded-4adda43f5560.png)
 
 
 
