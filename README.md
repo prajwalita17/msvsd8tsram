@@ -379,16 +379,15 @@ vsrc (2)                                   |vsrc (2)
 (no matching element)                      |c (5)
 Number of devices: 4 **Mismatch**          |Number of devices: 9 **Mismatch**
 Number of nets: 5                          |Number of nets: 5
----------------------------------------------------------------------------------------
+
 NET mismatches: Class fragments follow (with fanout counts):
 Circuit 1: INV_pre.spice                   |Circuit 2: INV_post.spice
----------------------------------------------------------------------------------------
+-------------------------------------------|--------------------------------------------
 Net: out                                   |Net: out
   nmos/(drain|source) = 1                  |  nmos/(drain|source) = 1
   pmos/(drain|source) = 1                  |  pmos/(drain|source) = 1
                                            |  c/bottom = 1
                                            |  c/top = 1
-                                           |
 Net: vdd                                   |Net: vdd
   pmos/(drain|source) = 1                  |  pmos/(drain|source) = 1
   pmos/bulk = 1                            |  pmos/bulk = 1
@@ -404,8 +403,6 @@ Net: in                                    |(no matching net)
   nmos/gate = 1                            |
   pmos/gate = 1                            |
   vsrc/pos = 1                             |
----------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------
 (no matching net)                          |Net: gnd
                                            |  nmos/(drain|source) = 1
                                            |  nmos/bulk = 1
@@ -418,10 +415,10 @@ Net: in                                    |(no matching net)
                                            |  c/bottom = 1
                                            |  c/top = 2
                                            |  vsrc/pos = 1
----------------------------------------------------------------------------------------
+
 DEVICE mismatches: Class fragments follow (with node fanout counts):
 Circuit 1: INV_pre.spice                   |Circuit 2: INV_post.spice
----------------------------------------------------------------------------------------
+-------------------------------------------|--------------------------------------------
 (no matching instance)                     |Instance: c:0
                                            |  top = 5
                                            |  bottom = 6
@@ -441,19 +438,16 @@ Circuit 1: INV_pre.spice                   |Circuit 2: INV_post.spice
 (no matching instance)                     |Instance: c:3
                                            |  top = 6
                                            |  bottom = 6
----------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------
+
 Instance: pmos:1001                        |Instance: c:4
   pos = 3                                  |  pos = 6
   neg = 3                                  |  neg = 6
----------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------
+-------------------------------------------|--------------------------------------------
 Instance: pmos:1001                        |Instance: pmos:1001
   (drain,source) = (3,2)                   |  (drain,source) = (5,4)
   gate = 3                                 |  gate = 6
   bulk = 3                                 |  bulk = 5
----------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------
+-------------------------------------------|--------------------------------------------
 Instance: nmos:1000                        |Instance: nmos:1000
   (drain,source) = (3,2)                   |  (drain,source) = (6,4)
   gate = 3                                 |  gate = 6
