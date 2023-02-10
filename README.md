@@ -230,6 +230,12 @@ NMH = $V_{OH}$ - $V_{IH}$= 878 mV
 ![image](https://user-images.githubusercontent.com/104830557/217894614-6f71e536-1c11-4dd3-943d-31820b1d2e99.png)
 ![image](https://user-images.githubusercontent.com/104830557/217895260-eae643c1-9253-4513-ad7e-5502bb917441.png)
 
+The timing parameters are calculated as
+
+Rise time = **time(@80 % of Vout)** - **t(@20% of Vout)**
+Fall time = **time(@20 % of Vout)** - **t(@80% of Vout)**
+Cell Rise Delay =**time taken by output to rise to its 50% value** - **time taken by the input to fall to its 50% value**
+Cell Rise Delay =**time taken by output to fall to its 50% value** - **time taken by the input to rise to its 50% value**
 
 | Parameter    | Value| 
 |----------|-----|
@@ -238,11 +244,11 @@ NMH = $V_{OH}$ - $V_{IH}$= 878 mV
 |Cell Rise Delay|66.6 ps|
 |Cell Fall Delay|56.3 ps|
 
-## Pre-layout Simulation of function using Ngspice
+# Pre-layout Simulation of function Fn using Ngspice
 ![image](https://user-images.githubusercontent.com/104830557/218004046-205b15ce-bafd-4023-b527-9591cad9ea42.png)
 The model file used is [130nm BSIM4 model card for bulk CMOS](http://ptm.asu.edu/modelcard/2006/130nm_bulk.pm) .
 
-The netlist `fn_prelayout.spice` for the function **fn** given can be written as 
+The netlist `fn_prelayout.spice` for the function **Fn** given can be written as 
 ```
 ***Netlist description for prelayout simulation***
 M1 3 a vdd vdd pmos W=2.125u L=0.25u
@@ -287,7 +293,7 @@ Run the ngspice simulation using the following commands.
 ```
 ![image](https://user-images.githubusercontent.com/104830557/218006311-1a970c75-bc35-4d2d-9d40-a701253359c6.png)
 
-## Post-layout Simulation of function using Magic and Ngspice
+# Post-layout Simulation of function Fn using Magic and Ngspice
 ![image](https://user-images.githubusercontent.com/104830557/218008163-b35a4fea-e8f9-4428-a76f-b2da4c400984.png)
 
 Extract the netlist from the from the magic layout by typing these commands in tkcon 2.3 Main console.
@@ -353,6 +359,7 @@ Run the ngspice simulation using the following commands.
 ```
 ![image](https://user-images.githubusercontent.com/104830557/218010876-af06f84e-8d51-47b2-8ded-4adda43f5560.png)
 
+We can not that the graph of out vs time for both pre-layout simulation and post layout simulation are similar. Pre-layout simulation considers zero net delays and parasitic capacitances, hence the timing values are more optimistic. Post- layout simulation includes parasitic capacitance and non-zero netdelays, hence the timing values are more accurate.
 
 
 
