@@ -233,9 +233,13 @@ NMH = $V_{OH}$ - $V_{IH}$= 878 mV
 The timing parameters are calculated as
 
 Rise time = **time(@80 % of Vout)** - **t(@20% of Vout)**
+
 Fall time = **time(@20 % of Vout)** - **t(@80% of Vout)**
+
 Cell Rise Delay =**time taken by output to rise to its 50% value** - **time taken by the input to fall to its 50% value**
+
 Cell Rise Delay =**time taken by output to fall to its 50% value** - **time taken by the input to rise to its 50% value**
+
 
 | Parameter    | Value| 
 |----------|-----|
@@ -251,6 +255,7 @@ Cell Rise Delay =**time taken by output to fall to its 50% value** - **time take
 ![image](https://user-images.githubusercontent.com/104830557/218082285-c7cc110d-a2ef-4f98-93bc-f9784ff3692e.png)
 
 # Comparison of Pre-layout and Post-layout timing parameters for inverter.
+
 | Parameter    | Value from Pre-layout Simulation| Value from Post-layout Simulation|
 |----------|-----|-----|
 |Rise Time|40.8 ps|54.679 ps|
