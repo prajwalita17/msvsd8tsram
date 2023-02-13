@@ -69,8 +69,10 @@ Install magic and its dependencies using the following commands. The dependencie
     $sudo apt install -y x11-xserver-utils
 # Install OpenGL
     $sudo apt install -y libglu1-mesa-dev freeglut3-dev mesa-common-dev
-# Cnstall Tcl/Tk
+# Install Tcl/Tk
     $sudo apt install -y tcl-dev tk-dev
+#Install Cairo
+    $sudo apt install -y libcairo2-dev
 # Change to the work directory
     $cd ~/VSD_8TSRAM
 # Clone the git repo
