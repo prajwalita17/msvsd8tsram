@@ -97,6 +97,20 @@ Use KLayout to visualize the generated GDS: /home/prajwalita17/VSD_8TSRAM/ALIGN-
 Use KLayout to visualize the python generated GDS: /home/prajwalita17/VSD_8TSRAM/ALIGN-public/work/INV_0.python.gds
 ```
 ```
+prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/ALIGN-public/work$ klayout INV_0.lef
+```
+
+<img width="1021" alt="inverter lef" src="https://user-images.githubusercontent.com/104830557/219664288-e8fece07-0477-41e3-b1a6-a248969f3182.png">
+
+```
+prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/ALIGN-public/work$ klayout INV_0.gds
+```
+![image](https://user-images.githubusercontent.com/104830557/219664164-96acafd1-039e-49ab-9df4-bf08f789a6de.png)
+
+
+
+```
+```
 prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/ALIGN-public/work$ magic -T /home/prajwalita17/VSD_8TSRAM/open_pdks/sky130/sky130A/libs.tech/magic/sky130A.tech
 ```
 File >> Read GDS >> INV_0.gds
@@ -205,17 +219,19 @@ Use KLayout to visualize the generated GDS: /home/prajwalita17/VSD_8TSRAM/ALIGN-
 Use KLayout to visualize the python generated GDS: /home/prajwalita17/VSD_8TSRAM/ALIGN-public/work/FUNCTION_0.python.gds
 ```
 ```
-prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/ALIGN-public/work$ klatout FUNCTION_0.lef
+prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/ALIGN-public/work$ klayout FUNCTION_0.lef
 ```
-![Uploading func lef.png…]()
+![image](https://user-images.githubusercontent.com/104830557/219663626-13ced715-c7f9-4b92-a705-8a7c3a9ad342.png)
 
 ```
-prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/ALIGN-public/work$ klatout FUNCTION_0.gds
+prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/ALIGN-public/work$ klayout FUNCTION_0.gds
 ```
 <img width="994" alt="func gds" src="https://user-images.githubusercontent.com/104830557/219663250-45238b68-d530-4c8b-9611-b5e9cc9bbae7.png">
+
 ```
 prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/ALIGN-public/work$ magic -T /home/prajwalita17/VSD_8TSRAM/open_pdks/sky130/sky130A/libs.tech/magic/sky130A.tech
 ```
+
 File >> Read GDS >> FUNCTION_0.gds
 
 ![image](https://user-images.githubusercontent.com/104830557/219610696-aeba8305-731d-4933-a3e0-8a370463b16b.png)
