@@ -61,7 +61,7 @@ EXAMPLE 1:
 ### Post-layout Characterization using Magic/Ngspice
 ### Post-layout Characterization using ALign Tool
 ```
-prajwalita17@prajwalita17-VirtualBox:~$ **cd VSD_8TSRAM/ALIGN-public/**
+prajwalita17@prajwalita17-VirtualBox:~$ cd VSD_8TSRAM/ALIGN-public/
 prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/ALIGN-public$ python3 -m venv general
 prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/ALIGN-public$ source general/bin/activate
 (general) prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/ALIGN-public$ python3 -m pip install pip --upgrade
