@@ -764,7 +764,7 @@ ngspice 2 -> plot y
 ngspice 3 -> plot a b c d e f y
 ngspice 4 -> 
 ```
-<img width="1052" alt="image" src="https://user-images.githubusercontent.com/104830557/219736971-5760804a-f19b-4ed5-85ca-ccdd5fc4851a.png">
+![image](https://user-images.githubusercontent.com/104830557/218010876-af06f84e-8d51-47b2-8ded-4adda43f5560.png)
 
 
 ### 3.c. Post-layout Characterization using Align Tool
