@@ -169,6 +169,113 @@ x0 = 1.74118e-08, y0 = 0.179487
 <img width="1016" alt="function prelayout" src="https://user-images.githubusercontent.com/104830557/219541640-89d429dc-dd22-4fcf-afc1-546362649475.png">
 
 ### 3.b. Post-layout Characterization using Magic/Ngspice
+```
+prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/work/magic$ ngspice function.spice 
+******
+** ngspice-39 : Circuit level simulation program
+** The U. C. Berkeley CAD Group
+** Copyright 1985-1994, Regents of the University of California.
+** Copyright 2001-2022, The ngspice team.
+** Please get your ngspice manual from http://ngspice.sourceforge.net/docs.html
+** Please file your bug-reports at http://ngspice.sourceforge.net/bugrep.html
+** Creation Date: Mon Feb 13 14:54:43 UTC 2023
+******
+​
+Note: No compatibility mode selected!
+​
+​
+Circuit: * spice3 file created from function.ext - technology: sky130a
+​
+ngspice 1 -> run
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+​
+Warning: singular matrix:  check node x1.m1_1276_n1342#
+​
+Note: Starting dynamic gmin stepping
+Trying gmin =   1.0000E-03 Note: One successful gmin step
+Trying gmin =   1.0000E-04 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Note: One successful gmin step
+Trying gmin =   1.0000E-06 Note: One successful gmin step
+Trying gmin =   1.0000E-07 Note: One successful gmin step
+Trying gmin =   1.0000E-08 Note: One successful gmin step
+Trying gmin =   1.0000E-09 Note: One successful gmin step
+Trying gmin =   1.0000E-10 Note: One successful gmin step
+Trying gmin =   1.0000E-11 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Warning: singular matrix:  check node x1.m1_1276_n1342#
+​
+Warning: Dynamic gmin stepping failed
+Note: Starting true gmin stepping
+Trying gmin =   1.0000E-03 Warning: singular matrix:  check node x1.m1_1276_n1342#
+​
+Warning: Further gmin increment
+Trying gmin =   5.6234E-03 Warning: singular matrix:  check node x1.m1_1276_n1342#
+​
+Warning: Further gmin increment
+Trying gmin =   8.6596E-03 Warning: singular matrix:  check node x1.m1_1276_n1342#
+​
+Warning: Further gmin increment
+Trying gmin =   9.6466E-03 Warning: singular matrix:  check node x1.m1_1276_n1342#
+​
+Warning: Further gmin increment
+Trying gmin =   9.9105E-03 Warning: Further gmin increment
+Trying gmin =   9.9775E-03 Warning: Further gmin increment
+Trying gmin =   9.9944E-03 Warning: Further gmin increment
+Trying gmin =   9.9986E-03 Warning: Further gmin increment
+Trying gmin =   9.9996E-03 Warning: Last gmin step failed
+Warning: True gmin stepping failed
+Note: Starting source stepping
+Supplies reduced to   0.0000% 
+Trying gmin =   1.0000E-02 Note: One successful gmin step
+Trying gmin =   1.0000E-03 Note: One successful gmin step
+Trying gmin =   1.0000E-04 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Note: One successful gmin step
+Trying gmin =   1.0000E-06 Note: One successful gmin step
+Trying gmin =   1.0000E-07 Note: One successful gmin step
+Trying gmin =   1.0000E-08 Note: One successful gmin step
+Trying gmin =   1.0000E-09 Note: One successful gmin step
+Trying gmin =   1.0000E-10 Note: One successful gmin step
+Trying gmin =   1.0000E-11 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Note: One successful source step
+Supplies reduced to   0.1000% Supplies reduced to   0.0000% Warning: source stepping failed
+Note: Transient op started
+Note: Transient op finished successfully
+​
+Initial Transient Solution
+--------------------------
+​
+Node                                   Voltage
+----                                   -------
+a                                            0
+b                                            0
+c                                            0
+d                                            0
+e                                            0
+f                                            0
+vdd                                        1.8
+x1.vsubs                             0.0427753
+net1                                   1.79889
+net2                                   1.79889
+net3                                   1.79806
+y                                      1.79762
+net4                                0.00121611
+net5                                 0.0012145
+v1#branch                         -3.28305e-07
+v7#branch                          5.54314e-08
+v6#branch                          7.04087e-08
+v5#branch                          3.71802e-08
+v4#branch                          4.85773e-08
+v3#branch                          1.57349e-08
+v2#branch                          3.04627e-08
+​
+ Reference value :  0.00000e+00
+No. of Data Rows : 1313
+ngspice 2 -> plot y
+ngspice 3 -> plot a b c d e f y
+ngspice 4 -> 
+```
 ### 3.c. Post-layout Characterization using Align Tool
 ```
 prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/ALIGN-public$ python3 -m venv general
