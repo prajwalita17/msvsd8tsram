@@ -151,6 +151,9 @@ align.pnr.main INFO : OUTPUT gds.json /home/prajwalita17/VSD_8TSRAM/ALIGN-public
 Use KLayout to visualize the generated GDS: /home/prajwalita17/VSD_8TSRAM/ALIGN-public/work/FUNCTION_0.gds
 Use KLayout to visualize the python generated GDS: /home/prajwalita17/VSD_8TSRAM/ALIGN-public/work/FUNCTION_0.python.gds
 ```
+```
+prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/ALIGN-public/work$ magic -d XR /home/prajwalita17/VSD_8TSRAM/open_pdks/sky130/sky130A/libs.tech/magic/sky130A.tech
+```
 ### Comparison and LVS Report
 
 
