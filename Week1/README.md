@@ -152,8 +152,14 @@ Use KLayout to visualize the generated GDS: /home/prajwalita17/VSD_8TSRAM/ALIGN-
 Use KLayout to visualize the python generated GDS: /home/prajwalita17/VSD_8TSRAM/ALIGN-public/work/FUNCTION_0.python.gds
 ```
 ```
-prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/ALIGN-public/work$ magic -d XR /home/prajwalita17/VSD_8TSRAM/open_pdks/sky130/sky130A/libs.tech/magic/sky130A.tech
+prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/ALIGN-public/work$ magic -T /home/prajwalita17/VSD_8TSRAM/open_pdks/sky130/sky130A/libs.tech/magic/sky130A.tech
 ```
+File >> Read GDS >> FUNTION_0.gds
+
+<img width="577" alt="image" src="https://user-images.githubusercontent.com/104830557/219551204-46734329-84ae-4fa4-9646-4cb035447ec9.png">
+
+
+
 ### Comparison and LVS Report
 
 
