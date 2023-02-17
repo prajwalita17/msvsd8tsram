@@ -1,4 +1,13 @@
 # msvsd8tsram
+| S. No.    | Action Item|Status| 
+|----------|----------|-----------------------|
+|1.|[Install ALIGN tool](https://github.com/prajwalita17/msvsd8tsram/edit/main/Week1/README.md#1-align-installation)|✅|
+|2.|[Innverter pre-layout simulation using xschem/ngspice and SKY130 PDK](https://github.com/prajwalita17/msvsd8tsram/edit/main/Week1/README.md#2a-pre-layout-characterization-using-xschemngspice)|✅|
+|3.|[Innverter post-layout simulation using Magic/ngspice and SKY130 PDK](https://github.com/prajwalita17/msvsd8tsram/edit/main/Week1/README.md#2b-post-layout-characterization-using-magicngspice)|✅|
+|4.|[Inverter post-layout simulation using ALIGN](https://github.com/prajwalita17/msvsd8tsram/edit/main/Week1/README.md#2c-post-layout-characterization-using-align-tool) |✅|
+|5.|[Function pre-layout simulation using xschem/ngspice and SKY130 PDK](https://github.com/prajwalita17/msvsd8tsram/edit/main/Week1/README.md#3a-pre-layout-characterization-using-xschemngspice)|✅|
+|6.|[Function post-layout simulation using Magic/ngspice and SKY130 PDK](https://github.com/prajwalita17/msvsd8tsram/edit/main/Week1/README.md#3b-post-layout-characterization-using-magicngspice)|✅|
+|7.|[Function post-layout simulation using ALIGN](https://github.com/prajwalita17/msvsd8tsram/edit/main/Week1/README.md#3c-post-layout-characterization-using-align-tool)|❓|
 
 ## 1. ALIGN installation
 ALIGN is an open source automatic layout generator for analog circuits. Install ALIGN and all its dependencies using the following commands.
