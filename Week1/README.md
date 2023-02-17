@@ -264,9 +264,6 @@ x0 = 1.74118e-08, y0 = 0.179487
 <img width="1013" alt="image" src="https://user-images.githubusercontent.com/104830557/219606263-05d06b25-4215-4815-ac47-25975a15d21e.png">
 
 
-
-### 2.d. Comparison and LVS Report
-
 ## 3. Simulation of Function 
 ### 3.a. Pre-layout Characterization using Xschem/Ngspice
 <img width="526" alt="function schematic" src="https://user-images.githubusercontent.com/104830557/219541683-9e8ceb22-edb7-4612-86a2-fab51911d96d.png">
@@ -852,7 +849,6 @@ could not find a valid modelname
     Simulation interrupted due to error!
 ```
 
-### 3.d Comparison and LVS Report
 
 
 
