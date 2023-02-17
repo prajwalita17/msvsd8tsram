@@ -131,6 +131,26 @@ PnR.placer.Placer.PlacementCoreAspectRatio_ILP INFO : ..... 30 %
 PnR.placer.Placer.PlacementCoreAspectRatio_ILP INFO : ..... 40 %
 PnR.placer.Placer.PlacementCoreAspectRatio_ILP INFO : ..... 50 %
 PnR.placer.Placer.PlacementCoreAspectRatio_ILP INFO : ..... 60 %
+PnR.placer.Placer.PlacementCoreAspectRatio_ILP INFO : ..... 70 %
+PnR.placer.Placer.PlacementCoreAspectRatio_ILP INFO : ..... 80 %
+PnR.placer.Placer.PlacementCoreAspectRatio_ILP INFO : ..... 90 %
+align.pnr.build_pnr_model INFO : Reading contraint json file FUNCTION.pnr.const.json
+align.pnr.build_pnr_model INFO : Reading contraint json file INV_986780.pnr.const.json
+PnR.placer.SeqPair.SeqPair INFO : Enumerated search
+align.pnr.router INFO : Starting top_down routing on FUNCTION 0 restricted to None
+PnR.router.Router.RouteWork INFO : GcellGlobalRouter: INV_986780
+PnR.router.Router.RouteWork INFO : GcellDetailRouter: INV_986780
+PnR.router.Router.RouteWork INFO : GcellGlobalRouter: FUNCTION
+PnR.router.Router.RouteWork INFO : GcellDetailRouter: FUNCTION
+PnR.router.Router.RouteWork INFO : Create power grid: FUNCTION
+PnR.router.Router.RouteWork INFO : Power routing FUNCTION
+align.pnr.main INFO : OUTPUT json at /home/prajwalita17/VSD_8TSRAM/ALIGN-public/work/3_pnr/INV_986780_0_0.json
+align.pnr.main INFO : OUTPUT gds.json /home/prajwalita17/VSD_8TSRAM/ALIGN-public/work/3_pnr/INV_986780_0_0.python.gds.json
+align.pnr.main INFO : OUTPUT json at /home/prajwalita17/VSD_8TSRAM/ALIGN-public/work/3_pnr/FUNCTION_0.json
+align.pnr.main INFO : OUTPUT gds.json /home/prajwalita17/VSD_8TSRAM/ALIGN-public/work/3_pnr/FUNCTION_0.python.gds.json
+Use KLayout to visualize the generated GDS: /home/prajwalita17/VSD_8TSRAM/ALIGN-public/work/FUNCTION_0.gds
+Use KLayout to visualize the python generated GDS: /home/prajwalita17/VSD_8TSRAM/ALIGN-public/work/FUNCTION_0.python.gds
+```
 ### Comparison and LVS Report
 
 
