@@ -1,6 +1,6 @@
 # msvsd8tsram
 
-## ALIGN installation
+## 1. ALIGN installation
 ALIGN is an open source automatic layout generator for analog circuits. Install ALIGN and all its dependencies using the following commands.
 ```
 # Home directory
@@ -52,14 +52,14 @@ EXAMPLE 1:
     
 ```
 
-## Simulation of CMOS Inverter 
-### Pre-layout Characterization using Xschem/Ngspice
+## 2. Simulation of CMOS Inverter 
+### 2.a. Pre-layout Characterization using Xschem/Ngspice
 <img width="583" alt="inverter schematic" src="https://user-images.githubusercontent.com/104830557/219540453-82d875e9-9916-4fb7-84fb-2c933e35038f.png">
 
 <img width="980" alt="inverter subcircuit" src="https://user-images.githubusercontent.com/104830557/219540467-06e5482f-fa8b-4ebe-9d1a-9032add1af5c.png">
 
-### Post-layout Characterization using Magic/Ngspice
-### Post-layout Characterization using ALign Tool
+### 2.b. Post-layout Characterization using Magic/Ngspice
+### 2.c. Post-layout Characterization using ALign Tool
 ```
 .subckt inv A B vdd vss
 XM1 B A vdd vdd sky130_fd_pr__pfet_01v8 w=21e-7 l=0.15n nf=10 m=1
@@ -159,17 +159,17 @@ x0 = 1.74118e-08, y0 = 0.179487
 
 
 
-### Comparison and LVS Report
+### 2.d. Comparison and LVS Report
 
-## Simulation of Function 
-### Pre-layout Characterization using Xschem/Ngspice
+## 3. Simulation of Function 
+### 3.a. Pre-layout Characterization using Xschem/Ngspice
 <img width="526" alt="function schematic" src="https://user-images.githubusercontent.com/104830557/219541683-9e8ceb22-edb7-4612-86a2-fab51911d96d.png">
 <img width="1150" alt="function subcircuit" src="https://user-images.githubusercontent.com/104830557/219541693-9fc49481-a42f-4c22-9e1f-dccb691ea7db.png">
 
 <img width="1016" alt="function prelayout" src="https://user-images.githubusercontent.com/104830557/219541640-89d429dc-dd22-4fcf-afc1-546362649475.png">
 
-### Post-layout Characterization using Magic/Ngspice
-### Post-layout Characterization using Align Tool
+### 3.b. Post-layout Characterization using Magic/Ngspice
+### 3.c. Post-layout Characterization using Align Tool
 ```
 prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/ALIGN-public$ python3 -m venv general
 prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/ALIGN-public$ source general/bin/activate
@@ -237,7 +237,7 @@ File >> Read GDS >> FUNCTION_0.gds
 
 
 
-### Comparison and LVS Report
+### 3.d Comparison and LVS Report
 
 
 
