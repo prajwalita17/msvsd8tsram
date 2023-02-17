@@ -165,12 +165,18 @@ x0 = 1.74118e-08, y0 = 0.179487
 ### 3.a. Pre-layout Characterization using Xschem/Ngspice
 <img width="526" alt="function schematic" src="https://user-images.githubusercontent.com/104830557/219541683-9e8ceb22-edb7-4612-86a2-fab51911d96d.png">
 <img width="1150" alt="function subcircuit" src="https://user-images.githubusercontent.com/104830557/219541693-9fc49481-a42f-4c22-9e1f-dccb691ea7db.png">
+<img width="1016" alt="function_prelayout" src="https://user-images.githubusercontent.com/104830557/219730795-8082d1eb-6c05-4866-9d3e-f60e3d0f307f.png">
 
-<img width="1016" alt="function prelayout" src="https://user-images.githubusercontent.com/104830557/219541640-89d429dc-dd22-4fcf-afc1-546362649475.png">
 
 ### 3.b. Post-layout Characterization using Magic/Ngspice
 
 <img width="1202" alt="image" src="https://user-images.githubusercontent.com/104830557/219727444-4fea077e-af22-4450-aa66-1b1d15e42b4d.png">
+
+```
+extract all
+ext2spice cthresh 0 rthresh 0
+ext2spice
+```
 
 ```
 * SPICE3 file created from function.ext - technology: sky130A
@@ -545,7 +551,6 @@ C355 GND VSUBS 1.83fF
 .ends
 ```
 
-
 ```
 prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/work/magic$ ngspice function.spice 
 ******
@@ -653,6 +658,9 @@ ngspice 2 -> plot y
 ngspice 3 -> plot a b c d e f y
 ngspice 4 -> 
 ```
+<img width="1052" alt="image" src="https://user-images.githubusercontent.com/104830557/219736971-5760804a-f19b-4ed5-85ca-ccdd5fc4851a.png">
+
+
 ### 3.c. Post-layout Characterization using Align Tool
 ```
 prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/ALIGN-public$ python3 -m venv general
