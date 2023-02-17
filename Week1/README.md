@@ -61,6 +61,12 @@ EXAMPLE 1:
 ### Post-layout Characterization using Magic/Ngspice
 ### Post-layout Characterization using ALign Tool
 ```
+.subckt inv A B vdd vss
+XM1 B A vdd vdd sky130_fd_pr__pfet_01v8 w=21e-7 l=0.15n nf=10 m=1
+XM2 B A vss vss sky130_fd_pr__nfet_01v8 w=21e-7 l=0.15n nf=10 m=1
+.ends
+```
+```
 prajwalita17@prajwalita17-VirtualBox:~$ cd VSD_8TSRAM/ALIGN-public/
 prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/ALIGN-public$ python3 -m venv general
 prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/ALIGN-public$ source general/bin/activate
@@ -90,8 +96,55 @@ align.pnr.main INFO : OUTPUT gds.json /home/prajwalita17/VSD_8TSRAM/ALIGN-public
 Use KLayout to visualize the generated GDS: /home/prajwalita17/VSD_8TSRAM/ALIGN-public/work/INV_0.gds
 Use KLayout to visualize the python generated GDS: /home/prajwalita17/VSD_8TSRAM/ALIGN-public/work/INV_0.python.gds
 ```
+```
+prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/ALIGN-public/work$ magic -T /home/prajwalita17/VSD_8TSRAM/open_pdks/sky130/sky130A/libs.tech/magic/sky130A.tech
+```
+File >> Read GDS >> INV_0.gds
 
-<img width="201" alt="inverter align" src="https://user-images.githubusercontent.com/104830557/219541609-31fe475f-60d4-4c6f-a395-9a13f568a452.png">
+<img width="878" alt="inv post align" src="https://user-images.githubusercontent.com/104830557/219609124-7ecb7ab2-b295-4cff-b9e0-401446152e08.png">
+
+
+```
+extract do local
+extract all
+ext2spice cthresh 0 rthresh 0
+ext2spice
+```
+
+```
+prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/ALIGN-public/week1$ ngspice INV_0.spice 
+******
+** ngspice-39 : Circuit level simulation program
+** The U. C. Berkeley CAD Group
+** Copyright 1985-1994, Regents of the University of California.
+** Copyright 2001-2022, The ngspice team.
+** Please get your ngspice manual from http://ngspice.sourceforge.net/docs.html
+** Please file your bug-reports at http://ngspice.sourceforge.net/bugrep.html
+** Creation Date: Mon Feb 13 14:54:43 UTC 2023
+******
+Note: No compatibility mode selected!
+Circuit: * spice3 file created from inv_0.ext - technology: sky130a
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+Initial Transient Solution
+--------------------------
+Node                                   Voltage
+----                                   -------
+b                                          1.8
+a                                            0
+vss                                          0
+vdd                                        1.8
+vin#branch                                   0
+vdd#branch                         -2.0428e-11
+vgnd#branch                       -5.38166e-14
+ Reference value :  3.31750e-08
+No. of Data Rows : 6080
+ngspice 1 -> 
+x0 = 4.63529e-08, y0 = 0.815385
+x0 = 1.74118e-08, y0 = 0.179487
+```
+<img width="1013" alt="image" src="https://user-images.githubusercontent.com/104830557/219606263-05d06b25-4215-4815-ac47-25975a15d21e.png">
+
+
 
 ### Comparison and LVS Report
 
@@ -156,7 +209,7 @@ prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/ALIGN-public/work$ magic -T /h
 ```
 File >> Read GDS >> FUNTION_0.gds
 
-<img width="577" alt="image" src="https://user-images.githubusercontent.com/104830557/219551204-46734329-84ae-4fa4-9646-4cb035447ec9.png">
+![image](https://user-images.githubusercontent.com/104830557/219610696-aeba8305-731d-4933-a3e0-8a370463b16b.png)
 
 
 
