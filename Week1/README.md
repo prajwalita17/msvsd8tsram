@@ -96,6 +96,7 @@ align.pnr.main INFO : OUTPUT gds.json /home/prajwalita17/VSD_8TSRAM/ALIGN-public
 Use KLayout to visualize the generated GDS: /home/prajwalita17/VSD_8TSRAM/ALIGN-public/work/INV_0.gds
 Use KLayout to visualize the python generated GDS: /home/prajwalita17/VSD_8TSRAM/ALIGN-public/work/INV_0.python.gds
 ```
+
 ```
 prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/ALIGN-public/work$ klayout INV_0.lef
 ```
@@ -108,8 +109,6 @@ prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/ALIGN-public/work$ klayout INV
 ![image](https://user-images.githubusercontent.com/104830557/219664164-96acafd1-039e-49ab-9df4-bf08f789a6de.png)
 
 
-
-```
 ```
 prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/ALIGN-public/work$ magic -T /home/prajwalita17/VSD_8TSRAM/open_pdks/sky130/sky130A/libs.tech/magic/sky130A.tech
 ```
