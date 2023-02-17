@@ -727,7 +727,24 @@ File >> Read GDS >> FUNCTION_0.gds
 
 ![image](https://user-images.githubusercontent.com/104830557/219610696-aeba8305-731d-4933-a3e0-8a370463b16b.png)
 
-
+```
+prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/ALIGN-public/week1$ ngspice FUNCTION_0.spice
+******
+** ngspice-39 : Circuit level simulation program
+** The U. C. Berkeley CAD Group
+** Copyright 1985-1994, Regents of the University of California.
+** Copyright 2001-2022, The ngspice team.
+** Please get your ngspice manual from http://ngspice.sourceforge.net/docs.html
+** Please file your bug-reports at http://ngspice.sourceforge.net/bugrep.html
+** Creation Date: Mon Feb 13 14:54:43 UTC 2023
+******
+Note: No compatibility mode selected!
+Circuit: * spice3 file created from function_0.ext - technology: sky130a
+Error on line:
+  m.x0.msky130_fd_pr__nfet_01v8 y e vss vss x0:sky130_fd_pr__nfet_01v8__model l=    3.000000000000000e+01     w=    4.200000000000000e+02     nf=    1.000000000000000e+00     ad=    0.000000000000000e+00     as=    0.000000000000000e+00     pd=    0.000000000000000e+00     ps=    0.000000000000000e+00     nrd=    0.000000000000000e+00     nrs=    0.000000000000000e+00     sa=    0.000000000000000e+00     sb=    0.000000000000000e+00     sd=    0.000000000000000e+00
+could not find a valid modelname
+    Simulation interrupted due to error!
+```
 
 ### 3.d Comparison and LVS Report
 
