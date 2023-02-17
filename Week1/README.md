@@ -104,6 +104,33 @@ Use KLayout to visualize the python generated GDS: /home/prajwalita17/VSD_8TSRAM
 
 ### Post-layout Characterization using Magic/Ngspice
 ### Post-layout Characterization using Align Tool
+```
+prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/ALIGN-public$ python3 -m venv general
+prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/ALIGN-public$ source general/bin/activate
+(general) prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/ALIGN-public$ python3 -m pip install pip --upgrade
+Requirement already satisfied: pip in ./general/lib/python3.8/site-packages (23.0)
+(general) prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/ALIGN-public$ cd work/
+(general) prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/ALIGN-public/work$ schematic2layout.py ../ALIGN-pdk-sky130/examples/function/ -p ../pdks/SKY130_PDK/
+align.main INFO : Reading netlist: /home/prajwalita17/VSD_8TSRAM/ALIGN-public/ALIGN-pdk-sky130/examples/function/function.sp subckt=FUNCTION, flat=0
+align.compiler.compiler INFO : Starting topology identification...
+align.compiler.compiler INFO : Power and ground nets not found. Power grid will not be constructed.
+align.compiler.compiler INFO : Completed topology identification.
+align.pnr.main INFO : Running Place & Route for FUNCTION
+align.pnr.build_pnr_model INFO : Reading contraint json file FUNCTION.pnr.const.json
+align.pnr.build_pnr_model INFO : Reading contraint json file INV_986780.pnr.const.json
+align.pnr.build_pnr_model INFO : Reading contraint json file FUNCTION.pnr.const.json
+align.pnr.build_pnr_model INFO : Reading contraint json file INV_986780.pnr.const.json
+align.pnr.placer INFO : Starting bottom-up placement on INV_986780 1
+PnR.placer.SeqPair.SeqPair INFO : Enumerated search
+PnR.placer.Placer.PlacementCoreAspectRatio_ILP INFO : Exhausted all permutations of seq pairs and found 1 placement solution(s)
+align.pnr.placer INFO : Starting bottom-up placement on FUNCTION 0
+PnR.placer.Placer.PlacementCoreAspectRatio_ILP INFO : Required 1 perturbations to generate a feasible solution.
+PnR.placer.Placer.PlacementCoreAspectRatio_ILP INFO : ..... 10 %
+PnR.placer.Placer.PlacementCoreAspectRatio_ILP INFO : ..... 20 %
+PnR.placer.Placer.PlacementCoreAspectRatio_ILP INFO : ..... 30 %
+PnR.placer.Placer.PlacementCoreAspectRatio_ILP INFO : ..... 40 %
+PnR.placer.Placer.PlacementCoreAspectRatio_ILP INFO : ..... 50 %
+PnR.placer.Placer.PlacementCoreAspectRatio_ILP INFO : ..... 60 %
 ### Comparison and LVS Report
 
 
