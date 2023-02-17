@@ -58,7 +58,104 @@ EXAMPLE 1:
 
 <img width="980" alt="inverter subcircuit" src="https://user-images.githubusercontent.com/104830557/219540467-06e5482f-fa8b-4ebe-9d1a-9032add1af5c.png">
 
+```
+prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/work/magic$ ngspice inv.spice 
+******
+** ngspice-39 : Circuit level simulation program
+** The U. C. Berkeley CAD Group
+** Copyright 1985-1994, Regents of the University of California.
+** Copyright 2001-2022, The ngspice team.
+** Please get your ngspice manual from http://ngspice.sourceforge.net/docs.html
+** Please file your bug-reports at http://ngspice.sourceforge.net/bugrep.html
+** Creation Date: Mon Feb 13 14:54:43 UTC 2023
+******
+Note: No compatibility mode selected!
+Circuit: * spice3 file created from inv.ext - technology: sky130a
+ngspice 1 -> run
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+Warning: singular matrix:  check node in
+Note: Starting dynamic gmin stepping
+Trying gmin =   1.0000E-03 Note: One successful gmin step
+Trying gmin =   1.0000E-04 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Note: One successful gmin step
+Trying gmin =   1.0000E-06 Note: One successful gmin step
+Trying gmin =   1.0000E-07 Note: One successful gmin step
+Trying gmin =   1.0000E-08 Note: One successful gmin step
+Trying gmin =   1.0000E-09 Note: One successful gmin step
+Trying gmin =   1.0000E-10 Note: One successful gmin step
+Trying gmin =   1.0000E-11 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Warning: singular matrix:  check node in
+Warning: Dynamic gmin stepping failed
+Note: Starting true gmin stepping
+Trying gmin =   1.0000E-03 Warning: singular matrix:  check node in
+Warning: Further gmin increment
+Trying gmin =   5.6234E-03 Warning: singular matrix:  check node in
+Warning: Further gmin increment
+Trying gmin =   8.6596E-03 Warning: singular matrix:  check node in
+Warning: Further gmin increment
+Trying gmin =   9.6466E-03 Warning: singular matrix:  check node in
+Warning: Further gmin increment
+Trying gmin =   9.9105E-03 Warning: Further gmin increment
+Trying gmin =   9.9775E-03 Warning: Further gmin increment
+Trying gmin =   9.9944E-03 Warning: Further gmin increment
+Trying gmin =   9.9986E-03 Warning: Further gmin increment
+Trying gmin =   9.9996E-03 Warning: Last gmin step failed
+Warning: True gmin stepping failed
+Note: Starting source stepping
+Supplies reduced to   0.0000% 
+Trying gmin =   1.0000E-02 Note: One successful gmin step
+Trying gmin =   1.0000E-03 Note: One successful gmin step
+Trying gmin =   1.0000E-04 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Note: One successful gmin step
+Trying gmin =   1.0000E-06 Note: One successful gmin step
+Trying gmin =   1.0000E-07 Note: One successful gmin step
+Trying gmin =   1.0000E-08 Note: One successful gmin step
+Trying gmin =   1.0000E-09 Note: One successful gmin step
+Trying gmin =   1.0000E-10 Note: One successful gmin step
+Trying gmin =   1.0000E-11 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Note: One successful source step
+Supplies reduced to   0.1000% Supplies reduced to   0.0000% Warning: source stepping failed
+Note: Transient op started
+Note: Transient op finished successfully
+Initial Transient Solution
+--------------------------
+Node                                   Voltage
+----                                   -------
+out                                   0.197854
+in                                    0.815515
+x1.vsubs                              0.325366
+vdd                                        1.8
+a                                            0
+y                                      1.79978
+vin#branch                         3.60328e-08
+v1#branch                         -2.13248e-05
+ Reference value :  0.00000e+00
+No. of Data Rows : 6080
+ngspice 2 -> plot a y
+```
+   
+<img width="1054" alt="inverter pre layout" src="https://user-images.githubusercontent.com/104830557/219746239-b5ed75ce-b48d-4359-b863-813b4c1d572b.png">
+
 ### 2.b. Post-layout Characterization using Magic/Ngspice
+```
+prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/work/magic$ magic -d XR
+```
+File >> Import SPICE >> /home/.xschem/simulations/inv.spice
+
+<img width="404" alt="Screenshot 2023-02-16 162344" src="https://user-images.githubusercontent.com/104830557/219742849-3690b47f-34b1-4c6d-8979-6a1dc525cb7e.png">
+
+```
+extract do local
+extract all
+ext2spice cthresh 0 rthresh 0
+ext2spice
+```
+
+<img width="1013" alt="post layout inv wave" src="https://user-images.githubusercontent.com/104830557/219742682-68b26dec-ab23-4eed-8d5b-3a430d6cd74e.png">
+
 ### 2.c. Post-layout Characterization using ALign Tool
 ```
 .subckt inv A B vdd vss
