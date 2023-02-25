@@ -48,6 +48,8 @@ To install OpenROAD:
   export OPENROAD=~/OpenROAD-flow-scripts/tools/OpenROAD
   export PATH=~/OpenROAD-flow-scripts/tools/install/OpenROAD/bin:~/OpenROAD-flow-scripts/tools/install/yosys/bin:~/OpenROAD-flow-   scripts/tools/install/LSOracle/bin:$PATH
 ```
+After install, cd into `/usr/bin` and do: `sudo ln -s /home/user/OpenROAD-dir/build/src/openroad openroad`
+
 ## 2.3 Installing Yosys
 Yosys is a framework for Verilog RTL synthesis. It currently has extensive Verilog-2005 support and provides a basic set of synthesis algorithms for various application domains. Selected features and typical applications:
 
@@ -64,6 +66,8 @@ To install Yosys use the following commands
    sudo make install 
    make test
 ```
+After installing Yosys, cd into `/usr/bin` and do: `sudo ln -s /home/user/yosys-dir/yosys yosys`
+
 ## 2.4 Installing Magic
 Magic is a venerable VLSI layout tool, written in the 1980's at Berkeley by John Ousterhout, now famous primarily for writing the scripting interpreter language Tcl. Due largely in part to its liberal Berkeley open-source license, magic has remained popular with universities and small companies. The open-source license has allowed VLSI engineers with a bent toward programming to implement clever ideas and help magic stay abreast of fabrication technology. However, it is the well thought-out core algorithms which lend to magic the greatest part of its popularity. Magic is widely cited as being the easiest tool to use for circuit layout, even for people who ultimately rely on commercial tools for their product design flow.
 
@@ -169,7 +173,7 @@ Targets supported:
   ```
   prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/openfasoc/openfasoc/generators/temp-sense-gen$ make sky130hd_temp ninv=6 nhead=3 sim=pex
   ```
-  Now the simulations starts with following steps.
+  Now the simulations starts with following steps. The highlights of the entire flow is show below. 
   ```
   # Parsing command line arguments...
   # Cleaning the workspace...
