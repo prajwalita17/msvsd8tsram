@@ -1,3 +1,14 @@
+# Index
+
+- [1. OpenFASOC](#1-openfasoc)
+- [2. Installation](#2-installation)
+  * [2.1 Installing OpenFASOC](#21-installing-openfasoc)
+  * [2.2 Installing OpenROAD](#22-installing-openroad)
+  * [2.3 Installing Yosys](#23-installing-yosys)
+  * [2.4 Installing Magic](#24-installing-magic)
+  * [2.5 Installing KLayout](#25-installing-klayout)
+- [3. Configuring the SKY130A path](#3-configuring-the-sky130a-path)
+- [4. Generating the Temperature Sensor Layout](#4-generating-the-temperature-sensor-layout)
 
 # 1. OpenFASOC
 OpenFASoC is a project focused on automated analog generation from user specification to GDSII with fully open-sourced tools. It is led by a team of researchers at the University of Michigan and is inspired from FASoC which sits on proprietary software.
@@ -112,7 +123,7 @@ sudo apt-get install -y libqt5widgets5
 
 sudo dpkg -i klayout_0.27.11-1_amd64.deb
 ```
-## Configuring the SKY130A path
+# 3. Configuring the SKY130A path
 
 To set the SKY130A path, got to the **~/VSD_8TSRAM/openfasoc/openfasoc/common** directory and check the contents of platform_config.json file.
 
@@ -124,7 +135,7 @@ Now modify the platform_config.json file as shown.
 
 <img width="586" alt="Screenshot 2023-02-24 145422" src="https://user-images.githubusercontent.com/104830557/221334050-fe7ddbea-620e-4267-9ad1-fec1b945e564.png">
 
-# Generating the Temperature Sensor Layout
+# 4. Generating the Temperature Sensor Layout
 
 We now run a test generator to generate the layout for temperature sensor provided with OpenFASOC using these commands
 
@@ -435,9 +446,20 @@ Exiting tool....
 DRC is clean!
 LVS is clean!
 ```
-  
-  
-  
+
+GDS file will be generated in `~/openfasoc/openfasoc/generators
+temp-sense-gen/flow/results/sky130hd/tempsense`. Reading that in magic using the following commands results in the layout shown.
+```
+prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/openfasoc/openfasoc/generators/temp-sense-gen$ magic -T /home/prajwalita17/VSD_8TSRAM/open_pdks/sky130/sky130A/libs.tech/magic/sky130A.tech &
+```
+File >> Read GDS >> 6_1_merged.gds
+
+<img width="764" alt="Screenshot 2023-02-24 152850" src="https://user-images.githubusercontent.com/104830557/221336292-ec2eb221-b65a-4c35-91fd-d8c2d482ae62.png">
+
+Opening the GDS file is Klayout, we get this layout.
+
+  <img width="961" alt="Screenshot 2023-02-24 154617" src="https://user-images.githubusercontent.com/104830557/221336442-4fb3aa30-675e-42df-a077-26452464693a.png">
+
   
   
   
