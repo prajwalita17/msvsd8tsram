@@ -387,7 +387,7 @@ C14 m1_604_112# gnd 0.34fF
 C18 gnd VSUBS 0.66fF
 .ends
 ```
-/details>  
+</details>  
   
   <img width="1052" alt="image" src="https://user-images.githubusercontent.com/104830557/222753043-558deaa3-c3fb-4fcb-9039-5c35b7d61928.png">
 
