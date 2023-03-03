@@ -263,7 +263,7 @@ C9 VDD GND 17.11fF **FLOATING
 </details>
   
 <details>
-  <summary>Extracted Netlist</summary>
+  <summary>Extracted Netlist with Testbench</summary>
   
 ```
  * SPICE3 file created from RING_OSCILLATOR_0.ext - technology: sky130A
@@ -351,7 +351,7 @@ C5 STAGE2_INV_62673116_0_0_1677839736_0/li_1179_1495# OUT 1.49fF
 <img width="953" alt="image" src="https://user-images.githubusercontent.com/104830557/222754031-9ab2a2a6-d23b-4dfa-b0c0-7312c0ccdfe0.png">
 
 <details>
-  <summary>Extracted Netlist</summary>
+  <summary>Extracted Netlist with Testbench</summary>
 
 ```  
 * SPICE3 file created from ring_oscillator1.ext - technology: sky130A
