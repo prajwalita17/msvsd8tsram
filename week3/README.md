@@ -51,6 +51,50 @@ Vdd VDD GND 1.8
   
 </details>
 
+<details>
+  <summary>Netlist</summary>
+  
+```
+prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/work/xschem$ ngspice ../../../.xschem/simulations/ring_oscillator.spice
+******
+** ngspice-39 : Circuit level simulation program
+** The U. C. Berkeley CAD Group
+** Copyright 1985-1994, Regents of the University of California.
+** Copyright 2001-2022, The ngspice team.
+** Please get your ngspice manual from http://ngspice.sourceforge.net/docs.html
+** Please file your bug-reports at http://ngspice.sourceforge.net/bugrep.html
+** Creation Date: Wed Feb 22 10:52:33 UTC 2023
+******
+Note: Compatibility modes selected: hs a
+Warning: m=xx on .subckt line will override multiplier m hierarchy!
+Circuit: ** sch_path: /home/prajwalita17/vsd_8tsram/work/xschem/ring_oscillator.sch
+option SCALE: Scale is set to 1e-06 for instance and model parameters
+ngspice 3 -> run
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+Initial Transient Solution
+--------------------------
+Node                                   Voltage
+----                                   -------
+net1                                  0.828177
+out                                   0.828177
+vdd                                        1.8
+net3                                   1.57104
+net2                                  0.828177
+net4                                   1.57104
+net5                                   1.57104
+net6                                  0.201769
+net7                                  0.201769
+net8                                  0.201769
+vdd#branch                        -7.43745e-05
+ Reference value :  0.00000e+00
+No. of Data Rows : 5008
+ngspice 4 -> plot out
+```
+
+</details>
+
+<img width="1053" alt="image" src="https://user-images.githubusercontent.com/104830557/222695929-630ff0f7-179a-42ba-b698-090383d42ab6.png">
+
 ## Pre-layout Simulation of Ring Oscillator using Xschem
 ## Post-layout Simulation of Ring Oscillator using ALIGN
 ## Post-layout Simulation of Ring Oscillator using MAGIC
