@@ -347,6 +347,50 @@ C5 STAGE2_INV_62673116_0_0_1677839736_0/li_1179_1495# OUT 1.49fF
 <img width="1144" alt="image" src="https://user-images.githubusercontent.com/104830557/222708975-6ac8e3e4-215c-44a2-a797-e456ff187826.png">
 
 ## Post-layout Simulation of Ring Oscillator using MAGIC
+
+  <img width="953" alt="image" src="https://user-images.githubusercontent.com/104830557/222754031-9ab2a2a6-d23b-4dfa-b0c0-7312c0ccdfe0.png">
+
+<details>
+  <summary>Extracted Netlist</summary>
+
+```  
+* SPICE3 file created from ring_oscillator1.ext - technology: sky130A
+V1 vdd gnd 1.8
+x1 Y vdd gnd ring_oscillator1
+**** begin user architecture code
+.ic V(OUT)=0
+.tran 1p 5n
+.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+**** end user architecture code
+.subckt ring_oscillator1 Y vdd gnd
+X0 m1_184_112# Y vdd XM5/w_n211_n319# sky130_fd_pr__pfet_01v8 ad=2.9e+11p pd=2.58e+06u as=8.7e+11p ps=7.74e+06u w=1e+06u l=150000u
+X1 m1_184_112# Y gnd VSUBS sky130_fd_pr__nfet_01v8 ad=2.9e+11p pd=2.58e+06u as=8.7e+11p ps=7.74e+06u w=1e+06u l=150000u
+X2 m1_604_112# m1_184_112# vdd XM5/w_n211_n319# sky130_fd_pr__pfet_01v8 ad=2.9e+11p pd=2.58e+06u as=0p ps=0u w=1e+06u l=150000u
+X3 m1_604_112# m1_184_112# gnd VSUBS sky130_fd_pr__nfet_01v8 ad=2.9e+11p pd=2.58e+06u as=0p ps=0u w=1e+06u l=150000u
+X4 Y m1_604_112# vdd XM5/w_n211_n319# sky130_fd_pr__pfet_01v8 ad=2.9e+11p pd=2.58e+06u as=0p ps=0u w=1e+06u l=150000u
+X5 Y m1_604_112# gnd VSUBS sky130_fd_pr__nfet_01v8 ad=2.9e+11p pd=2.58e+06u as=0p ps=0u w=1e+06u l=150000u
+C0 m1_184_112# gnd 0.35fF
+C1 Y vdd 0.30fF
+C2 Y XM5/w_n211_n319# 1.06fF
+C3 Y m1_604_112# 0.46fF
+C4 XM5/w_n211_n319# vdd 1.14fF
+C5 m1_604_112# vdd 0.34fF
+C6 m1_604_112# XM5/w_n211_n319# 0.59fF
+C7 Y m1_184_112# 0.47fF
+C8 Y gnd 0.30fF
+C9 m1_184_112# vdd 0.34fF
+C10 m1_184_112# XM5/w_n211_n319# 0.58fF
+C11 gnd vdd 0.01fF
+C12 XM5/w_n211_n319# gnd 0.00fF
+C13 m1_604_112# m1_184_112# 0.17fF
+C14 m1_604_112# gnd 0.34fF
+C18 gnd VSUBS 0.66fF
+.ends
+```
+/details>  
+  
+  <img width="1052" alt="image" src="https://user-images.githubusercontent.com/104830557/222753043-558deaa3-c3fb-4fcb-9039-5c35b7d61928.png">
+
 ## Pre-layout and Post-layout Comparison
 
 
