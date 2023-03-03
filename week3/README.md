@@ -11,6 +11,7 @@
 
 ## Pre-layout Simulation of Ring Oscillator using Xschem
 Go to the work directory `prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/work/xschem$ xschem`
+Create a schematic for ring oscillatior as shown.
 
 <img width="1203" alt="image" src="https://user-images.githubusercontent.com/104830557/222686065-aa1ee8d2-aafc-4556-b189-0ace02b5a6c6.png">
 
@@ -95,6 +96,7 @@ ngspice 4 -> plot out
 
 </details>
 
+### Ring Oscillator Output Waveform
 <img width="1053" alt="image" src="https://user-images.githubusercontent.com/104830557/222695929-630ff0f7-179a-42ba-b698-090383d42ab6.png">
 
 ## Post-layout Simulation of Ring Oscillator using ALIGN
@@ -130,7 +132,7 @@ Requirement already satisfied: pip in ./general/lib/python3.8/site-packages (23.
 </details>
   
 <details>
-  <summary>ALIGN Layout</summary>  
+  <summary>ALIGN GDS generation</summary>  
   
 ```  
 (general) prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/ALIGN-public/week3$ schematic2layout.py ../ALIGN-pdk-sky130/examples/ring_oscillator/ -p ../pdks/SKY130_PDK/
@@ -181,7 +183,19 @@ Use KLayout to visualize the python generated GDS: /home/prajwalita17/VSD_8TSRAM
    
 </details> 
 
+### Ring Oscillator Layout
+
+Reading the ALIGN generated GDS file in MAGIC using `File>> Read GDS`, results in the layout shown.
+
 <img width="1204" alt="image" src="https://user-images.githubusercontent.com/104830557/222703380-d2536814-6725-42c8-9186-bbe01aedcada.png">
+
+We then extract the spice netlist using the following commands.
+
+```
+extract all
+ext2spice cthresh 0 rthresh 0
+ext2spice
+```
 
 <details>
   <summary>Extracted Netlist</summary>
@@ -259,6 +273,7 @@ C7 m1_828_1568# GND 6.52fF **FLOATING
 C8 STAGE2_INV_62673116_0_0_1677839736_0/li_1179_1495# GND 5.34fF **FLOATING
 C9 VDD GND 17.11fF **FLOATING
 ```
+We then add the testbench to the extracted netlist as shown and simulate.
   
 </details>
   
@@ -344,11 +359,17 @@ C5 STAGE2_INV_62673116_0_0_1677839736_0/li_1179_1495# OUT 1.49fF
 ```
 </details>
  
+### Ring Oscillator Post-layout Output Waveform
+
 <img width="1052" alt="image" src="https://user-images.githubusercontent.com/104830557/222762363-635a6fe2-ad07-4d8c-8ea4-8c66472d611a.png">
 
 ## Post-layout Simulation of Ring Oscillator using MAGIC
 
+The layout for ring oscillator in magic is manually drawn as shown.
+
 <img width="953" alt="image" src="https://user-images.githubusercontent.com/104830557/222754031-9ab2a2a6-d23b-4dfa-b0c0-7312c0ccdfe0.png">
+
+Extracting the spice netlist and adding the testbench results in the following.
 
 <details>
   <summary>Extracted Netlist with Testbench</summary>
@@ -388,8 +409,12 @@ C18 gnd VSUBS 0.66fF
 ```
 </details>  
   
+### Ring Oscillator Post-layout Output Waveform
+
   <img width="1052" alt="image" src="https://user-images.githubusercontent.com/104830557/222753043-558deaa3-c3fb-4fcb-9039-5c35b7d61928.png">
 
 ## Pre-layout and Post-layout Comparison
+
+We can see that the post-layout waveforms for ring oscillator obtained from layout generated in ALIGN and the manually drawn MAGIC layout are similar. Comparing the pre-layout and post-layout waveforms, we see that the oscillations in pre-layout waveforms starts at 2.1 ns whereas those in post-layout waveform start at 1 ns.
 
 
