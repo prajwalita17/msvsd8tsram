@@ -13,7 +13,7 @@ Go to the work directory `prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/work
 <img width="1203" alt="image" src="https://user-images.githubusercontent.com/104830557/222686065-aa1ee8d2-aafc-4556-b189-0ace02b5a6c6.png">
 
 <details>
-  <summary>Netlist</summary>
+  <summary>Netlist extracted from Xschem</summary>
   
 ```  
 ** sch_path: /home/prajwalita17/VSD_8TSRAM/work/xschem/ring_oscillator.sch
@@ -52,7 +52,7 @@ Vdd VDD GND 1.8
 </details>
 
 <details>
-  <summary>Netlist</summary>
+  <summary>Ngspice simulation</summary>
   
 ```
 prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/work/xschem$ ngspice ../../../.xschem/simulations/ring_oscillator.spice
@@ -97,6 +97,92 @@ ngspice 4 -> plot out
 
 ## Pre-layout Simulation of Ring Oscillator using Xschem
 ## Post-layout Simulation of Ring Oscillator using ALIGN
+
+<details>
+  <summary>Input Netlist to ALIGN</summary>
+  
+```
+.subckt ring_oscillator OUT VDD GND
+XM1 net1 OUT GND GND sky130_fd_pr__nfet_01v8 L=150e-09 w=10.5e-7 nf=10 m=1
+XM2 net2 net1 GND GND sky130_fd_pr__nfet_01v8 L=150e-09 w=10.5e-7 nf=10 m=1
+XM3 OUT net2 GND GND sky130_fd_pr__nfet_01v8 L=150e-09 w=10.5e-7 nf=10 m=1
+XM4 net1 OUT VDD VDD sky130_fd_pr__pfet_01v8 L=150e-09 w=10.5e-7 nf=10 m=1
+XM5 net2 net1 VDD VDD sky130_fd_pr__pfet_01v8 L=150e-09 w=10.5e-7 nf=10 m=1
+XM6 OUT net2 VDD VDD sky130_fd_pr__pfet_01v8 L=150e-09 w=10.5e-7 nf=10 m=1
+.ends
+```
+</details>
+
+
+<details>
+  <summary>ALIGN virtual environment</summary>
+
+ ```    
+prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/ALIGN-public$ python3 -m venv general
+prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/ALIGN-public$ source general/bin/activate
+(general) prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/ALIGN-public$ python3 -m pip install pip --upgrade
+Requirement already satisfied: pip in ./general/lib/python3.8/site-packages (23.0.1)
+(general) prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/ALIGN-public$ cd week3/
+(general) prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/ALIGN-public/week3$ schematic2layout.py ../ALIGN-pdk-sky130/examples/ring_oscillator/ -p ../pdks/SKY130_PDK/
+```
+  
+</details>
+  
+<details>
+  <summary>ALIGN Layout</summary>  
+  
+```  
+(general) prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/ALIGN-public/week3$ schematic2layout.py ../ALIGN-pdk-sky130/examples/ring_oscillator/ -p ../pdks/SKY130_PDK/
+align.main INFO : Reading netlist: /home/prajwalita17/VSD_8TSRAM/ALIGN-public/ALIGN-pdk-sky130/examples/ring_oscillator/ring_oscillator.sp subckt=RING_OSCILLATOR, flat=0
+align.compiler.compiler INFO : Starting topology identification...
+align.compiler.compiler INFO : Power and ground nets not found. Power grid will not be constructed.
+align.compiler.compiler INFO : Completed topology identification.
+align.pnr.main INFO : Running Place & Route for RING_OSCILLATOR
+align.pnr.build_pnr_model INFO : Reading contraint json file RING_OSCILLATOR.pnr.const.json
+align.pnr.build_pnr_model INFO : Reading contraint json file STAGE2_INV_62673116.pnr.const.json
+align.pnr.build_pnr_model INFO : Reading contraint json file INV_57920576.pnr.const.json
+align.pnr.build_pnr_model INFO : Reading contraint json file RING_OSCILLATOR.pnr.const.json
+align.pnr.build_pnr_model INFO : Reading contraint json file STAGE2_INV_62673116.pnr.const.json
+align.pnr.build_pnr_model INFO : Reading contraint json file INV_57920576.pnr.const.json
+align.pnr.placer INFO : Starting bottom-up placement on STAGE2_INV_62673116 1
+PnR.placer.SeqPair.SeqPair INFO : Enumerated search
+PnR.placer.Placer.PlacementCoreAspectRatio_ILP INFO : Exhausted all permutations of seq pairs and found 1 placement solution(s)
+align.pnr.placer INFO : Starting bottom-up placement on INV_57920576 2
+PnR.placer.SeqPair.SeqPair INFO : Enumerated search
+PnR.placer.Placer.PlacementCoreAspectRatio_ILP INFO : Exhausted all permutations of seq pairs and found 1 placement solution(s)
+align.pnr.placer INFO : Starting bottom-up placement on RING_OSCILLATOR 0
+PnR.placer.SeqPair.SeqPair INFO : Enumerated search
+PnR.placer.Placer.PlacementCoreAspectRatio_ILP INFO : Exhausted all permutations of seq pairs and found 1 placement solution(s)
+align.pnr.build_pnr_model INFO : Reading contraint json file RING_OSCILLATOR.pnr.const.json
+align.pnr.build_pnr_model INFO : Reading contraint json file STAGE2_INV_62673116.pnr.const.json
+align.pnr.build_pnr_model INFO : Reading contraint json file INV_57920576.pnr.const.json
+PnR.placer.SeqPair.SeqPair INFO : Enumerated search
+PnR.placer.SeqPair.SeqPair INFO : Enumerated search
+PnR.placer.SeqPair.SeqPair INFO : Enumerated search
+align.pnr.router INFO : Starting top_down routing on RING_OSCILLATOR 0 restricted to None
+PnR.router.Router.RouteWork INFO : GcellGlobalRouter: STAGE2_INV_62673116
+PnR.router.Router.RouteWork INFO : GcellDetailRouter: STAGE2_INV_62673116
+PnR.router.Router.RouteWork INFO : GcellGlobalRouter: INV_57920576
+PnR.router.Router.RouteWork INFO : GcellDetailRouter: INV_57920576
+PnR.router.Router.RouteWork INFO : GcellGlobalRouter: RING_OSCILLATOR
+PnR.router.Router.RouteWork INFO : GcellDetailRouter: RING_OSCILLATOR
+PnR.router.Router.RouteWork INFO : Create power grid: RING_OSCILLATOR
+PnR.router.Router.RouteWork INFO : Power routing RING_OSCILLATOR
+align.pnr.main INFO : OUTPUT json at /home/prajwalita17/VSD_8TSRAM/ALIGN-public/week3/3_pnr/STAGE2_INV_62673116_0_0.json
+align.pnr.main INFO : OUTPUT gds.json /home/prajwalita17/VSD_8TSRAM/ALIGN-public/week3/3_pnr/STAGE2_INV_62673116_0_0.python.gds.json
+align.pnr.main INFO : OUTPUT json at /home/prajwalita17/VSD_8TSRAM/ALIGN-public/week3/3_pnr/INV_57920576_0_0.json
+align.pnr.main INFO : OUTPUT gds.json /home/prajwalita17/VSD_8TSRAM/ALIGN-public/week3/3_pnr/INV_57920576_0_0.python.gds.json
+align.pnr.main INFO : OUTPUT json at /home/prajwalita17/VSD_8TSRAM/ALIGN-public/week3/3_pnr/RING_OSCILLATOR_0.json
+align.pnr.main INFO : OUTPUT gds.json /home/prajwalita17/VSD_8TSRAM/ALIGN-public/week3/3_pnr/RING_OSCILLATOR_0.python.gds.json
+Use KLayout to visualize the generated GDS: /home/prajwalita17/VSD_8TSRAM/ALIGN-public/week3/RING_OSCILLATOR_0.gds
+Use KLayout to visualize the python generated GDS: /home/prajwalita17/VSD_8TSRAM/ALIGN-public/week3/RING_OSCILLATOR_0.python.gds
+```
+   
+</details> 
+
+
+<details>
+  <summary>ALIGN virtual environment</summary>
 ## Post-layout Simulation of Ring Oscillator using MAGIC
 ## Pre-layout and Post-layout Comparison
 
