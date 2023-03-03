@@ -342,7 +342,7 @@ C4 m1_828_1568# VDD 7.87fF
 C5 STAGE2_INV_62673116_0_0_1677839736_0/li_1179_1495# OUT 1.49fF
 .ends
 ```
-/details>
+</details>
   
 <img width="1144" alt="image" src="https://user-images.githubusercontent.com/104830557/222708975-6ac8e3e4-215c-44a2-a797-e456ff187826.png">
 
