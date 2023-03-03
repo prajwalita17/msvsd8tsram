@@ -348,7 +348,7 @@ C5 STAGE2_INV_62673116_0_0_1677839736_0/li_1179_1495# OUT 1.49fF
 
 ## Post-layout Simulation of Ring Oscillator using MAGIC
 
-  <img width="953" alt="image" src="https://user-images.githubusercontent.com/104830557/222754031-9ab2a2a6-d23b-4dfa-b0c0-7312c0ccdfe0.png">
+<img width="953" alt="image" src="https://user-images.githubusercontent.com/104830557/222754031-9ab2a2a6-d23b-4dfa-b0c0-7312c0ccdfe0.png">
 
 <details>
   <summary>Extracted Netlist</summary>
