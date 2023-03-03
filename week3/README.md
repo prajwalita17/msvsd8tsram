@@ -8,6 +8,8 @@
 - [Pre-layout and Post-layout Comparison](https://github.com/prajwalita17/msvsd8tsram/blob/main/week3/README.md#pre-layout-and-post-layout-comparison)
 
 ## Ring Oscillator Circuit Design in Xschem
+
+## Pre-layout Simulation of Ring Oscillator using Xschem
 Go to the work directory `prajwalita17@prajwalita17-VirtualBox:~/VSD_8TSRAM/work/xschem$ xschem`
 
 <img width="1203" alt="image" src="https://user-images.githubusercontent.com/104830557/222686065-aa1ee8d2-aafc-4556-b189-0ace02b5a6c6.png">
@@ -95,7 +97,6 @@ ngspice 4 -> plot out
 
 <img width="1053" alt="image" src="https://user-images.githubusercontent.com/104830557/222695929-630ff0f7-179a-42ba-b698-090383d42ab6.png">
 
-## Pre-layout Simulation of Ring Oscillator using Xschem
 ## Post-layout Simulation of Ring Oscillator using ALIGN
 
 <details>
@@ -269,7 +270,6 @@ C9 VDD GND 17.11fF **FLOATING
 V1 VDD GND 1.8
 x1 OUT GND VDD ring_oscillator
 **** begin user architecture code
-.ic V(OUT)=0
 .tran 1p 5n
 .lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
 **** end user architecture code
@@ -343,8 +343,8 @@ C5 STAGE2_INV_62673116_0_0_1677839736_0/li_1179_1495# OUT 1.49fF
 .ends
 ```
 </details>
-  
-<img width="1144" alt="image" src="https://user-images.githubusercontent.com/104830557/222708975-6ac8e3e4-215c-44a2-a797-e456ff187826.png">
+ 
+<img width="1052" alt="image" src="https://user-images.githubusercontent.com/104830557/222762363-635a6fe2-ad07-4d8c-8ea4-8c66472d611a.png">
 
 ## Post-layout Simulation of Ring Oscillator using MAGIC
 
@@ -358,7 +358,6 @@ C5 STAGE2_INV_62673116_0_0_1677839736_0/li_1179_1495# OUT 1.49fF
 V1 vdd gnd 1.8
 x1 Y vdd gnd ring_oscillator1
 **** begin user architecture code
-.ic V(OUT)=0
 .tran 1p 5n
 .lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
 **** end user architecture code
